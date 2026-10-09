@@ -21,7 +21,7 @@ body {
   position: relative;
 }
 
-/* Шум 2-4% по concept.md — плоский чёрный фон читается дёшево без него */
+/* Шум 2-4%: плоский чёрный фон читается дёшево без него */
 body::before {
   content: "";
   position: fixed;

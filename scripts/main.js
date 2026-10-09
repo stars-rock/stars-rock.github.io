@@ -33,7 +33,7 @@ document.documentElement.classList.add('js');
   targets.forEach((el) => observer.observe(el));
 })();
 
-// Сквозная навигация — только после первого скролла (docs/concept.md).
+// Сквозная навигация — только после первого скролла.
 (() => {
   'use strict';
 
