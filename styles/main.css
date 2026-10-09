@@ -707,7 +707,9 @@ a { color: var(--color-accent); text-underline-offset: 0.2em; }
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-1) var(--space-4);
-  margin: 0 0 var(--space-8);
+  /* Сверху ближе к вводному абзацу, снизу — запас под подписи ромбов (они растут вверх от
+     линии на ~3 строки): список не липнет к таймлайну. */
+  margin: calc(var(--space-2) * -1) 0 var(--space-12);
   padding: 0;
   list-style: none;
 }
