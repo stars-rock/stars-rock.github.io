@@ -1075,6 +1075,18 @@ a { color: var(--color-accent); text-underline-offset: 0.2em; }
 }
 .js .finale__copy { display: inline-flex; align-items: center; }
 .finale__copy:hover { color: var(--color-text); border-color: var(--color-accent); }
+/* Запасной путь для тех, у кого `mailto:` ничего не открывает (почта в браузере без привязки) */
+.finale__alt { display: flex; flex-wrap: wrap; align-items: center; gap: 0 var(--space-3); margin: var(--space-2) 0 0; color: var(--color-text-muted); font-size: var(--size-caption); }
+.finale__alt a {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tap-min);
+  color: var(--color-text);
+  text-decoration: underline;
+  text-decoration-color: var(--color-border);
+  transition: text-decoration-color var(--dur-hover) var(--ease-out);
+}
+.finale__alt a:hover { text-decoration-color: var(--color-accent); }
 .finale__label {
   margin: 0 0 var(--space-3);
   font-family: var(--font-text);
