@@ -49,7 +49,7 @@ GitHub Pages: ветка `main`, корень репозитория. Измен
 
 ## Шрифты
 
-PT Serif и Onest распространяются по открытой лицензии SIL OFL; в `assets/fonts` лежат подмножества этих шрифтов.
+PT Serif (© ParaType Ltd.) и Onest (© The Onest Project Authors) распространяются по лицензии SIL Open Font License 1.1. В `assets/fonts` лежат их подмножества (кириллица и латиница) в формате WOFF2; авторские уведомления и текст лицензии — в [`assets/fonts/OFL.txt`](assets/fonts/OFL.txt).
 
 ## Права
 
