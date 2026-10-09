@@ -1,0 +1,80 @@
+/* Токены витрины — единственный источник значений.
+   Хексы и «магические» числа вне этого файла не допускаются.
+   Контраст посчитан по WCAG 2.1 к --color-bg. */
+
+:root {
+  /* Цвет */
+  --color-bg: #0E1217;
+  --color-surface: #1A2027;        /* 1.15:1 к фону — слой, но не граница */
+  --color-border: #5F6C7A;         /* 3.5:1 к фону, 3.1:1 к поверхности — критерий 1.4.11 */
+  --color-text: #E8E6E3;           /* 15.1:1 */
+  --color-text-muted: #9AA3AD;     /* 7.4:1 */
+
+  /* Акцент — янтарь, выбран 23.09.2026 по эскизам (артефакт в docs/handoff.md) */
+  --color-accent: #FFB020;         /* 10.3:1 */
+  --color-accent-ink: #0E1217;     /* текст поверх акцента */
+  /* Отклонены на том же выборе: */
+  /* --color-accent: #B8FF3C; */   /* лайм, 15.6:1 */
+  /* --color-accent: #E2725B; */   /* терракота, 6.1:1 */
+
+  /* Типографика — выбрана 23.09.2026, файлы в styles/fonts.css */
+  --font-display: "PT Serif", Georgia, serif;
+  --font-text: "Onest", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  /* Шкала с шагом 1.25 */
+  --size-caption: 0.8125rem;  /* 13px */
+  --size-body: 1rem;          /* 16px */
+  --size-lead: 1.25rem;       /* 20px */
+  --size-h4: 1.5625rem;       /* 25px */
+  --size-h3: 1.9375rem;       /* 31px */
+  --size-h2: 2.4375rem;       /* 39px */
+  --size-h1: 3.0625rem;       /* 49px */
+  --size-hero: 3.8125rem;     /* 61px */
+  /* Заголовок первого экрана: от h1 до hero с шириной окна — на 1024 в две
+     колонки 61px рвёт «Автоматизирую» посередине слова */
+  --size-hero-fluid: clamp(var(--size-h1), 4.4vw, var(--size-hero));
+
+  --leading-tight: 1.08;
+  --leading-body: 1.6;
+  --tracking-tight: -0.02em;
+  --measure: 70ch;
+
+  /* Отступы, шаг 8 */
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2rem;
+  --space-6: 3rem;
+  --space-8: 4rem;
+  --space-12: 6rem;
+  --space-16: 8rem;
+  --space-20: 10rem;
+
+  --container: 78rem;   /* 1248px — читаемые секции (текстовые блоки, карточки) */
+  --gutter: var(--space-2);
+  /* Отступ от края окна для полноширинных блоков (шапка, первый экран) —
+     между space-3 и space-8 из той же шкалы, тянется с шириной окна. */
+  --edge: clamp(var(--space-3), 4vw, var(--space-8));
+
+  /* Радиусы — только два значения */
+  --radius-sm: 8px;
+  --radius-lg: 20px;
+
+  /* Кривые — три на весь сайт */
+  --ease-out: cubic-bezier(0.33, 1, 0.68, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Длительности */
+  --dur-press: 100ms;
+  --dur-hover: 180ms;
+  --dur-reveal: 600ms;
+  --dur-expand: 400ms;
+  --dur-draw: 1000ms;
+  --delay-hero-schema: 400ms;
+  --stagger: 70ms;
+
+  /* Цель нажатия */
+  --tap-min: 44px;
+}

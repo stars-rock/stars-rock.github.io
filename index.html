@@ -1,0 +1,580 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Игорь Верещагин — автоматизация работы с документами и данными</title>
+  <meta name="description" content="Системный аналитик и инженер данных. Сверка документов, поиск по архивам, регулярные отчёты — на AI-агентах, RAG и локальных моделях. Кейсы и порядок работы.">
+  <meta property="og:title" content="Игорь Верещагин — автоматизация работы с документами и данными">
+  <meta property="og:description" content="Сверка документов, поиск по архивам, регулярные отчёты — на AI-агентах, RAG и локальных моделях.">
+  <!-- og:image, og:url и canonical — абсолютные адреса: часть мессенджеров относительный путь
+       не подхватывает. Сменится домен — заменить `https://stars-rock.github.io` во всех трёх.
+       Исходник картинки — design/og.html. -->
+  <link rel="canonical" href="https://stars-rock.github.io/">
+  <meta property="og:url" content="https://stars-rock.github.io/">
+  <meta property="og:image" content="https://stars-rock.github.io/assets/img/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Игорь Верещагин — автоматизирую ручную работу с документами и данными">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/assets/icons/favicon.ico" sizes="48x48">
+  <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/fonts.css">
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">К содержимому</a>
+
+  <header class="site-header" data-header hidden>
+    <div class="site-header__inner">
+      <span class="site-header__mark">Игорь Верещагин</span>
+      <nav class="site-header__nav" aria-label="Основная навигация">
+        <a href="#services">Услуги</a>
+        <a href="#cases">Кейсы</a>
+        <a href="#process">Как работаю</a>
+        <a href="#contact">Контакт</a>
+      </nav>
+      <a class="button" href="#contact">Связаться</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section--hero" id="hero" aria-labelledby="hero-title">
+      <div class="hero__inner">
+        <div class="hero__content">
+          <p class="hero__eyebrow">Игорь Верещагин · системный аналитик и инженер данных</p>
+          <h1 id="hero-title" class="hero__title">Автоматизирую ручную работу с документами и данными</h1>
+          <p class="hero__lead">Сверка документов, поиск по архивам, регулярные отчёты — на AI-агентах, RAG-системах и локальных моделях. От разбора задачи до работающей системы.</p>
+          <div class="hero__actions">
+            <a class="button button--accent" href="#contact">Обсудить задачу</a>
+            <a class="hero__link" href="#cases">Смотреть кейсы</a>
+          </div>
+        </div>
+        <figure class="hero__schema" aria-hidden="true">
+          <svg class="hero-schema__art" viewBox="0 0 480 420" role="img" focusable="false">
+            <g class="hero-schema__field">
+              <circle cx="142.8" cy="157.0" r="2.35" opacity="0.43"/>
+              <circle cx="206.8" cy="165.6" r="1.80" opacity="0.58"/>
+              <circle cx="218.6" cy="317.8" r="2.37" opacity="0.36"/>
+              <circle cx="156.2" cy="220.9" r="2.40" opacity="0.53"/>
+              <circle cx="237.4" cy="138.9" r="1.24" opacity="0.50"/>
+              <circle cx="84.0" cy="209.5" r="1.94" opacity="0.33"/>
+              <circle cx="364.4" cy="212.2" r="2.32" opacity="0.42"/>
+              <circle cx="375.5" cy="243.4" r="0.95" opacity="0.37"/>
+              <circle cx="236.1" cy="237.0" r="1.22" opacity="0.67"/>
+              <circle cx="268.0" cy="113.4" r="0.95" opacity="0.39"/>
+              <circle cx="322.1" cy="325.4" r="1.73" opacity="0.27"/>
+              <circle cx="275.7" cy="142.1" r="1.66" opacity="0.49"/>
+              <circle cx="272.0" cy="215.7" r="1.85" opacity="0.68"/>
+              <circle cx="171.0" cy="174.5" r="2.00" opacity="0.53"/>
+              <circle cx="264.1" cy="278.4" r="2.16" opacity="0.50"/>
+              <circle cx="322.2" cy="135.3" r="1.25" opacity="0.40"/>
+              <circle cx="220.0" cy="277.6" r="1.03" opacity="0.51"/>
+              <circle cx="156.7" cy="113.2" r="2.08" opacity="0.33"/>
+              <circle cx="280.9" cy="195.3" r="2.50" opacity="0.64"/>
+              <circle cx="68.7" cy="268.5" r="1.13" opacity="0.24"/>
+              <circle cx="252.5" cy="217.7" r="1.51" opacity="0.72"/>
+              <circle cx="95.4" cy="222.3" r="2.43" opacity="0.36"/>
+              <circle cx="381.8" cy="265.6" r="2.49" opacity="0.32"/>
+              <circle cx="212.0" cy="325.5" r="1.21" opacity="0.32"/>
+              <circle cx="67.6" cy="193.6" r="1.11" opacity="0.28"/>
+              <circle cx="378.4" cy="207.2" r="2.46" opacity="0.38"/>
+              <circle cx="111.2" cy="251.9" r="1.47" opacity="0.37"/>
+              <circle cx="158.4" cy="168.3" r="2.14" opacity="0.49"/>
+              <circle cx="206.1" cy="295.9" r="2.33" opacity="0.43"/>
+              <circle cx="174.1" cy="74.5" r="2.41" opacity="0.22"/>
+              <circle cx="116.4" cy="251.7" r="1.40" opacity="0.39"/>
+              <circle cx="366.8" cy="278.9" r="1.43" opacity="0.33"/>
+              <circle cx="281.2" cy="77.4" r="1.06" opacity="0.25"/>
+              <circle cx="68.3" cy="229.8" r="1.12" opacity="0.28"/>
+              <circle cx="308.5" cy="201.2" r="2.11" opacity="0.57"/>
+              <circle cx="215.3" cy="154.2" r="1.60" opacity="0.55"/>
+              <circle cx="318.5" cy="305.9" r="1.47" opacity="0.34"/>
+              <circle cx="279.5" cy="315.4" r="2.41" opacity="0.35"/>
+              <circle cx="161.5" cy="321.5" r="1.57" opacity="0.29"/>
+              <circle cx="361.4" cy="307.3" r="1.53" opacity="0.27"/>
+              <circle cx="402.6" cy="217.2" r="1.98" opacity="0.31"/>
+              <circle cx="371.2" cy="114.1" r="1.26" opacity="0.25"/>
+              <circle cx="138.9" cy="152.8" r="1.21" opacity="0.41"/>
+              <circle cx="391.6" cy="244.4" r="2.10" opacity="0.32"/>
+              <circle cx="216.8" cy="274.4" r="1.47" opacity="0.52"/>
+              <circle cx="317.7" cy="220.6" r="2.59" opacity="0.55"/>
+              <circle cx="65.6" cy="147.0" r="1.18" opacity="0.22"/>
+              <circle cx="305.9" cy="299.8" r="1.40" opacity="0.38"/>
+              <circle cx="146.5" cy="263.9" r="1.61" opacity="0.44"/>
+              <circle cx="196.0" cy="133.4" r="1.47" opacity="0.45"/>
+              <circle cx="319.3" cy="164.9" r="1.74" opacity="0.49"/>
+              <circle cx="135.7" cy="145.5" r="1.90" opacity="0.39"/>
+              <circle cx="249.1" cy="283.4" r="1.41" opacity="0.49"/>
+              <circle cx="174.1" cy="312.6" r="1.28" opacity="0.34"/>
+              <circle cx="316.3" cy="311.5" r="1.43" opacity="0.33"/>
+              <circle cx="309.0" cy="260.9" r="0.97" opacity="0.50"/>
+              <circle cx="172.7" cy="183.7" r="1.72" opacity="0.56"/>
+              <circle cx="123.8" cy="290.7" r="2.45" opacity="0.32"/>
+              <circle cx="285.1" cy="128.3" r="1.16" opacity="0.43"/>
+              <circle cx="329.5" cy="137.4" r="2.33" opacity="0.40"/>
+              <circle cx="335.5" cy="154.9" r="1.15" opacity="0.43"/>
+              <circle cx="113.7" cy="123.7" r="1.25" opacity="0.29"/>
+              <circle cx="135.5" cy="274.2" r="2.57" opacity="0.39"/>
+              <circle cx="61.7" cy="216.6" r="2.33" opacity="0.27"/>
+              <circle cx="238.6" cy="185.1" r="1.02" opacity="0.68"/>
+              <circle cx="303.1" cy="294.0" r="2.05" opacity="0.40"/>
+              <circle cx="253.2" cy="66.6" r="2.29" opacity="0.22"/>
+              <circle cx="121.0" cy="114.4" r="2.35" opacity="0.28"/>
+              <circle cx="155.4" cy="164.9" r="1.66" opacity="0.48"/>
+              <circle cx="352.1" cy="130.6" r="1.49" opacity="0.33"/>
+              <circle cx="376.4" cy="168.3" r="1.46" opacity="0.35"/>
+              <circle cx="275.3" cy="171.4" r="1.52" opacity="0.59"/>
+              <circle cx="284.4" cy="214.1" r="2.00" opacity="0.64"/>
+              <circle cx="211.8" cy="70.9" r="2.40" opacity="0.23"/>
+              <circle cx="84.7" cy="234.7" r="1.15" opacity="0.32"/>
+              <circle cx="231.3" cy="253.8" r="0.98" opacity="0.60"/>
+              <circle cx="209.5" cy="295.5" r="1.87" opacity="0.43"/>
+              <circle cx="204.3" cy="87.0" r="2.23" opacity="0.29"/>
+              <circle cx="291.1" cy="316.8" r="1.78" opacity="0.34"/>
+              <circle cx="123.6" cy="241.9" r="1.68" opacity="0.42"/>
+              <circle cx="150.1" cy="243.8" r="1.42" opacity="0.49"/>
+              <circle cx="317.8" cy="286.7" r="1.35" opacity="0.41"/>
+              <circle cx="106.2" cy="190.8" r="2.00" opacity="0.39"/>
+              <circle cx="185.8" cy="226.7" r="0.91" opacity="0.60"/>
+              <circle cx="352.7" cy="321.9" r="1.02" opacity="0.24"/>
+              <circle cx="321.1" cy="146.7" r="1.75" opacity="0.44"/>
+              <circle cx="381.4" cy="284.7" r="1.00" opacity="0.28"/>
+              <circle cx="184.4" cy="253.4" r="2.09" opacity="0.54"/>
+              <circle cx="196.3" cy="196.2" r="2.54" opacity="0.64"/>
+              <circle cx="240.1" cy="97.3" r="2.25" opacity="0.34"/>
+            </g>
+
+            <line class="hero-schema__leader" x1="240" y1="210" x2="90" y2="120"/>
+            <circle class="hero-schema__query-ring" cx="240" cy="210" r="7"/>
+            <circle class="hero-schema__query-dot" cx="240" cy="210" r="3"/>
+            <text class="hero-schema__label-eyebrow" x="28" y="104">ЗАПРОС</text>
+            <text class="hero-schema__label-body" x="28" y="124">«Где акт сверки за март?»</text>
+
+            <line class="hero-schema__leader" x1="308" y1="150" x2="368" y2="94"/>
+            <circle class="hero-schema__point" cx="308" cy="150" r="4"/>
+            <text class="hero-schema__label-eyebrow" x="326" y="78">НАЙДЕНО</text>
+            <text class="hero-schema__label-body" x="326" y="98">Акт сверки.pdf · 94%</text>
+
+            <line class="hero-schema__leader" x1="205" y1="300" x2="140" y2="360"/>
+            <circle class="hero-schema__point" cx="205" cy="300" r="4"/>
+            <text class="hero-schema__label-eyebrow" x="38" y="352">НАЙДЕНО</text>
+            <text class="hero-schema__label-body" x="38" y="372">Выписка банка.xlsx · 91%</text>
+          </svg>
+        </figure>
+        <ul class="hero__facts" role="list">
+          <li><strong>ГОСТ 34, ISO/IEC/IEEE 15288 и 29148</strong><span>Системный анализ и проектирование автоматизированных систем</span></li>
+          <li><strong>Команды до 15 человек</strong><span>Управление командами и проектами автоматизации</span></li>
+          <li><strong>Локальные модели</strong><span>Обработка на вашем сервере, документы не уходят наружу</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="problems" aria-labelledby="problems-title">
+      <h2 id="problems-title">С чем приходят</h2>
+      <ul class="problems" role="list">
+        <li class="problems__row reveal">
+          <span class="problems__num" aria-hidden="true">01</span>
+          <div class="problems__body">
+            <p class="problems__pain">Уже пробовали внедрить ИИ — получили игрушку, а не рабочий инструмент.</p>
+            <p class="problems__change"><span class="problems__label">Что меняется</span>Система встроена в процесс: у неё есть база знаний, регламент и понятный порядок работы, а не один промпт. <a href="#process">Как строится работа</a></p>
+          </div>
+        </li>
+        <li class="problems__row reveal">
+          <span class="problems__num" aria-hidden="true">02</span>
+          <div class="problems__body">
+            <p class="problems__pain">Сотрудники вручную сверяют документы, переносят данные между системами, ищут в архивах то, что там точно есть.</p>
+            <p class="problems__change"><span class="problems__label">Что меняется</span>Сверку, перенос и поиск делает система, человек разбирает только спорное. <a href="#cases">Кейс: сверка отчётности</a></p>
+          </div>
+        </li>
+        <li class="problems__row reveal">
+          <span class="problems__num" aria-hidden="true">03</span>
+          <div class="problems__body">
+            <p class="problems__pain">Процессы и знания держатся в головах конкретных людей, а не в системе.</p>
+            <p class="problems__change"><span class="problems__label">Что меняется</span>Решения и знания собраны в одной базе, по которой ищут по смыслу, а не по точным словам. <a href="#inside">Как это выглядит</a></p>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section class="section" id="services" aria-labelledby="services-title">
+      <h2 id="services-title">Услуги</h2>
+      <p class="section__lead">Пять направлений: что вы получаете на выходе и где это уже сделано.</p>
+      <ul class="bento" role="list">
+        <li class="bento__item bento__item--large reveal">
+          <h3>AI-автоматизация бизнес-процессов</h3>
+          <p>Агенты и сценарии, которые замещают ручные операции: разбор входящих документов, подготовка ответов, перенос данных между системами.</p>
+          <dl class="bento__meta">
+            <div><dt>На выходе</dt><dd>Работающий сценарий, база знаний и регламент внедрения</dd></div>
+            <div><dt>Кейс</dt><dd><a href="#case-agents">Автоматизация на AI-агентах</a></dd></div>
+          </dl>
+        </li>
+        <li class="bento__item bento__item--large reveal">
+          <h3>RAG и семантический поиск по корпоративным данным</h3>
+          <p>Поиск, который понимает смысл запроса, а не совпадение слов: разбор архивов, векторная база, ранжирование, ответы со ссылкой на исходный документ.</p>
+          <dl class="bento__meta">
+            <div><dt>На выходе</dt><dd>Поиск по вашему архиву с ответом и ссылкой на документ</dd></div>
+            <div><dt>Кейс</dt><dd><a href="#case-rag">Поиск по документам</a>, <a href="#case-ranking">ранжирование потока</a></dd></div>
+          </dl>
+        </li>
+        <li class="bento__item bento__item--small bento__item--wide reveal">
+          <h3>Приложения и интерфейсы к системам</h3>
+          <p>Веб-интерфейсы к собственным системам: дашборды, загрузка и разбор документов, администрирование. Дизайн — по вашему брендбуку или по макету, утверждённому до вёрстки.</p>
+          <dl class="bento__meta">
+            <div><dt>Кейс</dt><dd><a href="#case-finance">Платформа сверки отчётности</a></dd></div>
+          </dl>
+        </li>
+        <li class="bento__item bento__item--small reveal">
+          <h3>Аналитика и технологические обзоры</h3>
+          <p>Сравнение платформ и решений, оценка применимости под задачу, аргументация выбора для инвесткомитета или профильных ведомств.</p>
+          <dl class="bento__meta">
+            <div><dt>Кейс</dt><dd><a href="#case-agro">Инвестпроект в агропроме</a></dd></div>
+          </dl>
+        </li>
+        <li class="bento__item bento__item--small bento__item--narrow reveal">
+          <h3>Регулярные отчёты без ручной сборки</h3>
+          <p>Данные из базы сами складываются в готовый Excel: структура листов, итоги, примечания, выгрузка под печать.</p>
+          <dl class="bento__meta">
+            <div><dt>На выходе</dt><dd>Отчёт, который собирается сам</dd></div>
+          </dl>
+        </li>
+      </ul>
+    </section>
+
+    <section class="section" id="cases" aria-labelledby="cases-title">
+      <h2 id="cases-title">Кейсы</h2>
+      <p class="section__lead">Кейсы обезличены: заказчики и их данные не называются.</p>
+      <ul class="cases" role="list">
+        <li class="case-featured reveal" id="case-finance">
+          <p class="case-featured__kicker">Флагманский кейс · финансы</p>
+          <h3>AI-платформа сверки финансовой отчётности</h3>
+          <p class="case-featured__problem">Пакеты документов в произвольном оформлении сверялись вручную.</p>
+
+          <div class="case-featured__grid">
+            <div class="case-featured__main">
+              <div class="case-decision">
+                <span class="case__label">Ключевое решение</span>
+                <p>Модель не считает цифры. Сверку делают правила, модель подключается только на спорных случаях, а если не уверена — документ уходит человеку.</p>
+              </div>
+              <ol class="case-flow">
+                <li><strong>Распознавание</strong><span>Тип и структура документа, 10 типов финансовых форм</span></li>
+                <li><strong>Нормализация</strong><span>Разнородные выписки, балансы и расшифровки — к единому виду</span></li>
+                <li><strong>Сверка по правилам</strong><span>Каталог правил, объяснение каждого расхождения</span></li>
+                <li><strong>Спорные случаи</strong><span>Дообученная локальная модель, при низкой уверенности — человек</span></li>
+                <li><strong>Выгрузка</strong><span>Результаты для аудитора</span></li>
+              </ol>
+            </div>
+
+            <figure class="case-report">
+              <figcaption><span class="chip">Условный пример</span>Строка отчёта о расхождениях</figcaption>
+              <dl class="case-report__rows">
+                <div><dt>Баланс, строка 1250</dt><dd>1&nbsp;204&nbsp;570&nbsp;₽</dd></div>
+                <div><dt>ОСВ, сальдо сч. 51</dt><dd>1&nbsp;186&nbsp;140&nbsp;₽</dd></div>
+                <div class="case-report__diff"><dt>Расхождение</dt><dd>18&nbsp;430&nbsp;₽</dd></div>
+              </dl>
+              <p class="case-report__why"><span class="case__label">Объяснение</span>Остаток валютного счёта 52 входит в строку 1250, а ОСВ по нему в пакете нет. Запросить ОСВ по сч. 52.</p>
+            </figure>
+          </div>
+
+          <div class="case-featured__foot">
+            <div class="case__tags">
+              <span class="case__tag">FastAPI</span>
+              <span class="case__tag">Vue 3</span>
+              <span class="case__tag">PostgreSQL</span>
+              <span class="case__tag">Redis</span>
+              <span class="case__tag">локальная LLM</span>
+            </div>
+            <p class="case-featured__status">Доведена до рабочей версии с веб-интерфейсом</p>
+          </div>
+        </li>
+
+        <li class="case-card reveal" id="case-agents">
+          <div class="case-card__head"><span class="case-card__num" aria-hidden="true">02</span><h3>Автоматизация бизнес-процессов на AI-агентах</h3></div>
+          <p class="case-card__problem"><span class="sr-only">Задача: </span>Повторяющиеся операции и знания, которые жили только в головах сотрудников.</p>
+          <ul class="dots" role="list" aria-label="Сделано">
+            <li>Рабочие процессы с единой базой знаний</li>
+            <li>Фиксация решений в одном месте</li>
+            <li>Поэтапный план внедрения и анкетирование заказчика</li>
+          </ul>
+          <p class="case-card__stack"><span class="sr-only">Стек: </span>AI-агенты · база знаний · регламенты</p>
+        </li>
+
+        <li class="case-card reveal" id="case-rag">
+          <div class="case-card__head"><span class="case-card__num" aria-hidden="true">03</span><h3>RAG-система поиска по документам</h3></div>
+          <p class="case-card__problem"><span class="sr-only">Задача: </span>Архив файлов, в котором ничего нельзя было найти.</p>
+          <ul class="dots" role="list" aria-label="Сделано">
+            <li>Разбор PDF, DOCX, PPTX и XLSX с извлечением текста, таблиц и изображений</li>
+            <li>Нарезка на фрагменты и векторизация</li>
+            <li>Дедупликация по хэшу содержимого</li>
+          </ul>
+          <p class="case-card__stack"><span class="sr-only">Стек: </span>Python · PostgreSQL · pgvector · эмбеддинги</p>
+        </li>
+
+        <li class="case-card reveal" id="case-ranking">
+          <div class="case-card__head"><span class="case-card__num" aria-hidden="true">04</span><h3>Семантический поиск и ранжирование данных</h3></div>
+          <p class="case-card__problem"><span class="sr-only">Задача: </span>Поток разнородных записей, который некому было разбирать.</p>
+          <ul class="dots" role="list" aria-label="Сделано">
+            <li>Векторное индексирование потока</li>
+            <li>Ранжирование по релевантности</li>
+            <li>Автоматическая приоритизация и отсев шума</li>
+          </ul>
+          <p class="case-card__stack"><span class="sr-only">Стек: </span>Qdrant · pgvector · эмбеддинг-модели</p>
+        </li>
+
+        <li class="case-card reveal" id="case-agro">
+          <div class="case-card__head"><span class="case-card__num" aria-hidden="true">05</span><h3>Отраслевой инвестиционный проект в агропроме</h3></div>
+          <p class="case-card__problem"><span class="sr-only">Задача: </span>Понять, какие роботизированные решения применимы и зачем в проекте ИИ.</p>
+          <ul class="dots" role="list" aria-label="Сделано">
+            <li>Обзоры роботизированных платформ: сравнение решений и оценка применимости</li>
+            <li>Выводы и аргументация для заказчика</li>
+            <li>Обоснование применения ИИ и RAG-системы в контуре проекта</li>
+          </ul>
+          <p class="case-card__stack"><span class="sr-only">Стек: </span>аналитика рынка · архитектурные схемы · отраслевые стандарты</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="section" id="inside" aria-labelledby="inside-title">
+      <h2 id="inside-title">Как устроено внутри</h2>
+      <p class="section__lead">Сотрудник спрашивает обычными словами — система находит нужные места в архиве и отвечает со ссылкой на каждый документ.</p>
+      <figure class="demo reveal">
+        <figcaption class="demo__head">
+          <span class="chip">Условный пример</span>
+          <span>Поиск по архиву договоров</span>
+        </figcaption>
+
+        <ol class="demo__flow">
+          <li class="demo__step">
+            <span class="demo__mark demo__mark--ring" aria-hidden="true"></span>
+            <span class="demo__label">Вопрос</span>
+            <p class="demo__query">Какой лимит ответственности по договору поставки с ООО «Ромашка»?</p>
+          </li>
+
+          <li class="demo__step">
+            <span class="demo__mark demo__mark--dot" aria-hidden="true"></span>
+            <span class="demo__label">Найдено в архиве</span>
+            <ol class="demo__sources">
+              <li class="demo__source" id="demo-src-1">
+                <span class="demo__ref">1</span>
+                <div>
+                  <span class="demo__file">Договор поставки № 47.pdf · стр. 7</span>
+                  <p class="demo__quote">…совокупная ответственность Поставщика <mark>ограничена суммой 1&nbsp;200&nbsp;000&nbsp;₽</mark>…</p>
+                </div>
+              </li>
+              <li class="demo__source" id="demo-src-2">
+                <span class="demo__ref">2</span>
+                <div>
+                  <span class="demo__file">Доп. соглашение № 3.docx · п. 2</span>
+                  <p class="demo__quote">…пункт 8.2 Договора изложить в редакции: «…не более <mark>1&nbsp;500&nbsp;000&nbsp;₽</mark>»…</p>
+                </div>
+              </li>
+              <li class="demo__source" id="demo-src-3">
+                <span class="demo__ref">3</span>
+                <div>
+                  <span class="demo__file">Реестр договоров.xlsx · строка 214</span>
+                  <p class="demo__quote">ДС № 3 · подписано <mark>12.03.2025</mark> · действует</p>
+                </div>
+              </li>
+            </ol>
+          </li>
+
+          <li class="demo__step">
+            <span class="demo__mark demo__mark--end" aria-hidden="true"></span>
+            <span class="demo__label">Ответ</span>
+            <div class="demo__answer">
+              <p class="demo__value">1&nbsp;500&nbsp;000&nbsp;₽</p>
+              <p class="demo__text">
+                Исходный лимит — 1&nbsp;200&nbsp;000&nbsp;₽<span class="demo__cite" data-ref="1"><span class="sr-only">источник </span>1</span>.
+                Доп. соглашение № 3 увеличило его<span class="demo__cite" data-ref="2"><span class="sr-only">источник </span>2</span>;
+                по реестру оно подписано 12.03.2025 и действует<span class="demo__cite" data-ref="3"><span class="sr-only">источник </span>3</span>.
+              </p>
+            </div>
+          </li>
+        </ol>
+
+        <ul class="demo__notes" role="list">
+          <li><strong>Ссылка у каждого утверждения</strong><span>Файл и страница — ответ проверяется открытием одного документа.</span></li>
+          <li><strong>Ищет по смыслу</strong><span>«Лимит ответственности» найдётся, даже если в тексте написано «ограничена суммой».</span></li>
+          <li><strong>Может работать у вас</strong><span>Модель ставится на ваш сервер — документы не уходят в сторонние сервисы.</span></li>
+        </ul>
+      </figure>
+    </section>
+
+    <section class="section" id="process" aria-labelledby="process-title">
+      <h2 id="process-title">Как строится работа</h2>
+      <p class="section__lead">На каждом этапе видно, что делаю я, что нужно от вас и что остаётся у вас. Решения о продолжении — за вами.</p>
+      <ul class="terms" role="list">
+        <li>Твёрдая цена и срок — смета по ходу работы не растёт</li>
+        <li>Результат сдаётся с инструкцией, а не «чёрным ящиком»</li>
+      </ul>
+
+      <ol class="stages reveal">
+        <li class="stages__step">
+          <span class="stages__dot" aria-hidden="true"></span>
+          <span class="stages__num">01</span><h3>Разбор задачи</h3>
+          <p class="stages__block"><span>Делаю</span>Выясняю, что делается руками и сколько это стоит времени</p>
+          <p class="stages__block stages__block--you"><span>От вас</span>Примеры документов в том виде, в каком они приходят (можно обезличить); можно ли выносить их за периметр</p>
+          <p class="stages__block stages__block--out"><span>На выходе</span>Описание процесса и что автоматизировать первым</p>
+        </li>
+        <li class="stages__step">
+          <span class="stages__dot" aria-hidden="true"></span>
+          <span class="stages__num">02</span><h3>Согласование решения</h3>
+          <p class="stages__block"><span>Делаю</span>Архитектура, состав работ, критерии приёмки; для интерфейсов — макет по брендбуку</p>
+          <p class="stages__block stages__block--you"><span>От вас</span>Утвердить решение и критерии приёмки</p>
+          <p class="stages__block stages__block--out"><span>На выходе</span>Утверждённое решение и критерии приёмки</p>
+        </li>
+        <li class="stages__step">
+          <span class="stages__gate" aria-hidden="true"></span>
+          <span class="stages__gate-label">Старт — после согласования</span>
+          <span class="stages__dot" aria-hidden="true"></span>
+          <span class="stages__num">03</span><h3>Пилот</h3>
+          <p class="stages__block"><span>Делаю</span>Запускаю систему на одном узком участке</p>
+          <p class="stages__block stages__block--you"><span>От вас</span>Контрольные вопросы и отзывы сотрудников, которые пользуются пилотом</p>
+          <p class="stages__block stages__block--out"><span>На выходе</span>Работающий участок и проверка по критериям</p>
+        </li>
+        <li class="stages__step">
+          <span class="stages__gate" aria-hidden="true"></span>
+          <span class="stages__gate-label">Решение: расширять или остановиться</span>
+          <span class="stages__dot" aria-hidden="true"></span>
+          <span class="stages__num">04</span><h3>Внедрение</h3>
+          <p class="stages__block"><span>Делаю</span>Расширяю на смежные процессы</p>
+          <p class="stages__block stages__block--you"><span>От вас</span>Доступы к системам, с которыми нужна связка</p>
+          <p class="stages__block stages__block--out"><span>На выходе</span>Система в работе на смежных процессах</p>
+        </li>
+        <li class="stages__step">
+          <span class="stages__dot" aria-hidden="true"></span>
+          <span class="stages__num">05</span><h3>Передача и сопровождение</h3>
+          <p class="stages__block"><span>Делаю</span>Документация и регламент, чтобы система жила без автора</p>
+          <p class="stages__block stages__block--you"><span>От вас</span>Ответственный за систему на вашей стороне</p>
+          <p class="stages__block stages__block--out"><span>На выходе</span>Документация, регламент, обученный ответственный</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="section" id="stack" aria-labelledby="stack-title">
+      <h2 id="stack-title">Как выбираю инструменты</h2>
+      <p class="section__lead">Инструмент следует из задачи, а не наоборот. Четыре правила, по которым делается выбор.</p>
+      <div class="picks reveal">
+        <div class="picks__legend" aria-hidden="true"><span>Если задача такая</span><span>Выбираю и почему</span></div>
+        <dl class="picks__list">
+          <div class="picks__row"><dt class="picks__when"><span class="mark mark--ring" aria-hidden="true"></span>Данные уже в PostgreSQL, объём умеренный</dt><dd class="picks__pick"><span class="mark mark--end" aria-hidden="true"></span><span class="picks__name">pgvector</span><span class="picks__why">Поиск по смыслу рядом с остальными данными — без отдельной базы, которую нужно сопровождать</span></dd></div>
+          <div class="picks__row"><dt class="picks__when"><span class="mark mark--ring" aria-hidden="true"></span>Большой поток записей, нужны фильтры и ранжирование</dt><dd class="picks__pick"><span class="mark mark--end" aria-hidden="true"></span><span class="picks__name">Qdrant</span><span class="picks__why">Отдельная векторная база под нагрузку и фильтрацию</span></dd></div>
+          <div class="picks__row"><dt class="picks__when"><span class="mark mark--ring" aria-hidden="true"></span>Документы нельзя выносить за периметр</dt><dd class="picks__pick"><span class="mark mark--end" aria-hidden="true"></span><span class="picks__name">Локальная модель</span><span class="picks__why">Модель работает на вашем сервере, в сторонние сервисы ничего не уходит</span></dd></div>
+          <div class="picks__row"><dt class="picks__when"><span class="mark mark--ring" aria-hidden="true"></span>Нужна проверяемая точность в цифрах</dt><dd class="picks__pick"><span class="mark mark--end" aria-hidden="true"></span><span class="picks__name">Правила + модель</span><span class="picks__why">Расчёты и сверку делают правила, модель — только разбор неоднозначного</span></dd></div>
+        </dl>
+        <p class="picks__stack"><b>Рабочий стек</b>Python · FastAPI · PostgreSQL · pgvector · Qdrant · Redis · Ollama · Vue 3 · BPMN · UML · ArchiMate</p>
+      </div>
+    </section>
+
+    <section class="section" id="faq" aria-labelledby="faq-title">
+      <h2 id="faq-title">Вопросы и границы</h2>
+      <!-- Вкладки собирает main.js (класс .js на <html>). Без скрипта и на узком экране
+           список скрыт, ответы идут подряд — текст всех пяти всегда в разметке. -->
+      <div class="faq-tabs reveal">
+        <div class="faq-tabs__list" role="tablist" aria-orientation="vertical" aria-label="Вопросы">
+          <button class="faq-tabs__tab" type="button" role="tab" id="faq-t1" aria-controls="faq-p1" aria-selected="true"><span class="faq-tabs__ring" aria-hidden="true"></span><span class="faq-tabs__q">Что я получу по итогу?</span></button>
+          <button class="faq-tabs__tab" type="button" role="tab" id="faq-t2" aria-controls="faq-p2" aria-selected="false" tabindex="-1"><span class="faq-tabs__ring" aria-hidden="true"></span><span class="faq-tabs__q">Что не входит в работу?</span></button>
+          <button class="faq-tabs__tab" type="button" role="tab" id="faq-t3" aria-controls="faq-p3" aria-selected="false" tabindex="-1"><span class="faq-tabs__ring" aria-hidden="true"></span><span class="faq-tabs__q">Как быстро будет готова система?</span></button>
+          <button class="faq-tabs__tab" type="button" role="tab" id="faq-t4" aria-controls="faq-p4" aria-selected="false" tabindex="-1"><span class="faq-tabs__ring" aria-hidden="true"></span><span class="faq-tabs__q">Что если данных мало или они в плохом состоянии?</span></button>
+          <button class="faq-tabs__tab" type="button" role="tab" id="faq-t5" aria-controls="faq-p5" aria-selected="false" tabindex="-1"><span class="faq-tabs__ring" aria-hidden="true"></span><span class="faq-tabs__q">Кому принадлежит код после сдачи?</span></button>
+        </div>
+        <div class="faq-tabs__panels">
+          <div class="faq-tabs__panel is-active" role="tabpanel" id="faq-p1" aria-labelledby="faq-t1" tabindex="0">
+            <h3 class="faq-tabs__title">Что я получу по итогу?</h3>
+            <p class="faq-tabs__lead">Работающую систему, которой можно пользоваться без ограничения срока.</p>
+            <div class="faq-tabs__body">
+              <ul class="dots" role="list"><li>Развёрнута на вашей инфраструктуре</li><li>Исходный код целиком</li><li>Документация и инструкция для пользователей</li><li>Обучение сотрудников</li><li>Гарантийная поддержка после сдачи — её срок фиксируется в договоре</li></ul>
+              <p>Дорабатывать и сопровождать систему можно своими силами или с моей помощью.</p>
+            </div>
+          </div>
+          <div class="faq-tabs__panel" role="tabpanel" id="faq-p2" aria-labelledby="faq-t2" tabindex="0">
+            <h3 class="faq-tabs__title">Что не входит в работу?</h3>
+            <p class="faq-tabs__lead">Инфраструктура, работы сверх утверждённого состава и экспертные выводы.</p>
+            <div class="faq-tabs__body">
+              <ul class="dots" role="list">
+                <li>Аренда серверов и платные внешние сервисы — их вы оплачиваете напрямую поставщику</li>
+                <li>Интеграции с учётными системами (1С, SAP и другими) и всё, что выходит за утверждённый состав работ, — отдельным согласованным этапом</li>
+                <li>Администрирование ваших рабочих серверов и дежурство — за вашей ИТ-службой</li>
+                <li>Сопровождение после гарантийного срока — по отдельному договору с заранее названными границами</li>
+                <li>Экспертные выводы: система находит и сверяет, решение принимает ваш специалист</li>
+              </ul>
+            </div>
+          </div>
+          <div class="faq-tabs__panel" role="tabpanel" id="faq-p3" aria-labelledby="faq-t3" tabindex="0">
+            <h3 class="faq-tabs__title">Как быстро будет готова система?</h3>
+            <p class="faq-tabs__lead">Срок называю после разбора задачи и фиксирую в договоре по каждому этапу.</p>
+            <div class="faq-tabs__body">
+              <dl class="terms">
+                <div><dt>Разбор одного типа документов или регулярный отчёт</dt><dd>от нескольких дней до двух недель</dd></div>
+                <div><dt>Система со сверкой или поиском и интерфейсом</dt><dd>от двух до четырёх месяцев</dd></div>
+              </dl>
+              <p>Первый работающий результат вы видите на пилоте, а не в конце. Сроки зависят и от того, насколько ваши специалисты доступны на первом этапе.</p>
+            </div>
+          </div>
+          <div class="faq-tabs__panel" role="tabpanel" id="faq-p4" aria-labelledby="faq-t4" tabindex="0">
+            <h3 class="faq-tabs__title">Что если данных мало или они в плохом состоянии?</h3>
+            <p class="faq-tabs__lead">Это выясняется до начала разработки — на ваших примерах.</p>
+            <div class="faq-tabs__body">
+              <p>Я смотрю примеры и прямо говорю, что из них получится. Точность не обещаю словами — собираем контрольный набор документов с известными ответами и проверяем на нём: на чистых данных система не должна находить лишнего, на проблемных — не должна ничего пропускать.</p>
+              <div><h4 class="faq-tabs__sub">Конфиденциальность</h4><p>Примеры можно обезличить. Ваши данные, правила и описания процессов я не передаю третьим лицам и не использую в работе для других заказчиков; если в документах есть персональные данные — работа идёт по вашему поручению на их обработку.</p></div>
+            </div>
+          </div>
+          <div class="faq-tabs__panel" role="tabpanel" id="faq-p5" aria-labelledby="faq-t5" tabindex="0">
+            <h3 class="faq-tabs__title">Кому принадлежит код после сдачи?</h3>
+            <p class="faq-tabs__lead">Всё, что сделано под вас, переходит вам после приёмки и оплаты.</p>
+            <div class="faq-tabs__body">
+              <p>Это интеграции, правила, доработки интерфейса, документация. Если система строится на моей собственной платформе, созданной до договора, вы получаете бессрочное бесплатное право пользоваться ею в составе системы без ограничения числа пользователей.</p>
+              <p>Исходный код передаётся целиком, и вы вправе сами дорабатывать систему. Состав платформы и порядок перехода прав фиксируются в договоре.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="faq-note">Ответы описывают обычный порядок работы. Точные условия фиксируются в договоре.</p>
+    </section>
+
+    <section class="section" id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Контакт</h2>
+      <div class="finale reveal">
+        <div class="finale__main">
+          <div class="person">
+            <picture>
+              <source type="image/avif" srcset="assets/img/portrait-72.avif 1x, assets/img/portrait-144.avif 2x, assets/img/portrait-216.avif 3x">
+              <source type="image/webp" srcset="assets/img/portrait-72.webp 1x, assets/img/portrait-144.webp 2x, assets/img/portrait-216.webp 3x">
+              <img class="person__photo" src="assets/img/portrait-144.jpg" srcset="assets/img/portrait-72.jpg 1x, assets/img/portrait-144.jpg 2x, assets/img/portrait-216.jpg 3x" width="72" height="72" alt="" loading="lazy" decoding="async">
+            </picture>
+            <p class="person__who"><span class="person__name">Игорь Верещагин</span><span class="person__role">отвечаю сам, без посредников</span></p>
+          </div>
+          <p class="finale__title">Опишите задачу — отвечу, получится ли и с чего начать</p>
+          <p class="finale__text">Две-три фразы: что сейчас делается руками и в каком виде приходят документы.</p>
+          <div class="finale__actions">
+            <a class="button button--accent" href="mailto:vereschagin.it@gmail.com?subject=%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%B0%20%D0%BF%D0%BE%20%D0%B0%D0%B2%D1%82%D0%BE%D0%BC%D0%B0%D1%82%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8">Написать на почту</a>
+            <span class="finale__email">vereschagin.it@gmail.com <button class="finale__copy" type="button" data-copy="vereschagin.it@gmail.com">Скопировать</button></span>
+            <span class="sr-only" aria-live="polite" data-copy-status></span>
+          </div>
+        </div>
+        <div class="finale__next">
+          <h3 class="finale__label">Что будет дальше</h3>
+          <ol class="next-steps">
+            <li><span class="mark mark--ring" aria-hidden="true"></span><strong>Вы пишете две-три фразы о задаче</strong><span>Можно без деталей и документов</span></li>
+            <li><span class="mark mark--dot" aria-hidden="true"></span><strong>Я отвечаю, получится ли и с чего начать</strong><span>Если задача не моя — так и скажу</span></li>
+            <li><span class="mark mark--end" aria-hidden="true"></span><strong>Первый этап — разбор задачи</strong><span>Описание процесса и что автоматизировать первым</span></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p class="site-footer__who"><img src="assets/icons/favicon.svg" width="24" height="24" alt=""><span><span class="site-footer__name">Игорь Верещагин</span> · системный аналитик и инженер данных</span></p>
+      <p class="site-footer__links"><a href="mailto:vereschagin.it@gmail.com">vereschagin.it@gmail.com</a><a href="#hero">Наверх ↑</a><span>© 2026</span></p>
+    </div>
+  </footer>
+
+  <script src="scripts/main.js" defer></script>
+</body>
+</html>
