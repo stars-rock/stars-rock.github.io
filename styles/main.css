@@ -1428,6 +1428,9 @@ a { color: var(--color-accent); text-underline-offset: 0.2em; }
 .site-footer__links { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); margin: 0; max-width: none; }
 .site-footer__links { gap: var(--space-3); }
 .site-footer__who img { display: block; height: 36px; width: auto; }
+.site-footer__mission { max-width: var(--measure); }
+/* Статус исполнителя и НДС — отдельной строкой под подвалом, решение владельца 21.10.2026 */
+.site-footer__legal { flex-basis: 100%; margin: 0; max-width: none; }
 .site-footer a { color: var(--color-text-muted); text-decoration: none; }
 .site-footer a:hover { color: var(--color-text); }
 
