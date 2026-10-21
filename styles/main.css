@@ -201,7 +201,10 @@ a { color: var(--color-accent); text-underline-offset: 0.2em; }
 .hero__facts strong { font-weight: 600; }
 .hero__facts span { font-size: var(--size-caption); color: var(--color-text-muted); line-height: 1.5; }
 
-.section__lead { max-width: var(--measure); margin: calc(var(--space-1) * -1) 0 var(--space-4); color: var(--color-text-muted); font-size: var(--size-lead); }
+/* Короткий текст (одна-две фразы, до ~130 знаков) — в одну строку, без --measure: перенос
+   только дробил мысль. Длинным подзаголовкам — модификатор --long (замечание владельца 21.10.2026). */
+.section__lead { max-width: none; margin: calc(var(--space-1) * -1) 0 var(--space-4); color: var(--color-text-muted); font-size: var(--size-lead); }
+.section__lead--long { max-width: var(--measure); }
 
 /* «Условный пример» — общая метка для иллюстраций, не выдающих себя за реальные данные */
 .chip {
@@ -503,7 +506,42 @@ a { color: var(--color-accent); text-underline-offset: 0.2em; }
 @media (max-width: 767px) {
   .study { grid-template-columns: 1fr; padding: var(--space-3); }
 }
-.analytics__team { margin: var(--space-4) 0 0; }
+/* Коллеги под задачу и условия разбора — полоса на всю ширину раздела: заголовок слева,
+   роли метками, условия в ряд. Абзац в 270 знаков в 62ch висел под левым кейсом (21.10.2026). */
+.team-band {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
+  gap: var(--space-4);
+  margin: var(--space-6) 0 0;
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--color-border);
+}
+.team-band__title { margin: 0; font-size: var(--size-h4); line-height: 1.2; }
+.team-band__lead { margin: 0 0 var(--space-2); max-width: none; }
+.team-band__roles { display: flex; flex-wrap: wrap; gap: var(--space-1); margin: 0 0 var(--space-3); padding: 0; list-style: none; }
+.team-band__roles li {
+  padding: 4px var(--space-2);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  font-size: var(--size-caption);
+}
+.team-band__terms {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-4);
+  margin: 0;
+  font-size: var(--size-caption);
+  line-height: 1.55;
+}
+.team-band__terms dt { color: var(--color-accent); }
+.team-band__terms dd { margin: 0; }
+.team-band__terms div:last-child dd { color: var(--color-text-muted); }
+@media (max-width: 1023px) {
+  .team-band { grid-template-columns: 1fr; gap: var(--space-2); }
+}
+@media (max-width: 767px) {
+  .team-band__terms { grid-template-columns: 1fr; gap: var(--space-2); }
+}
 
 /* Условный пример разбора: путь одной заявки, работа против ожидания (приём карты
    потока ценности). Полоса в масштабе времени; работа — акцентом, ожидание — штриховкой.
@@ -1288,7 +1326,7 @@ a { color: var(--color-accent); text-underline-offset: 0.2em; }
 }
 .faq-terms dt { color: var(--color-text); }
 .faq-terms dd { margin: 0; color: var(--color-accent); font-weight: 600; }
-.faq-note { margin: var(--space-3) 0 0; font-size: var(--size-caption); color: var(--color-text-muted); }
+.faq-note { max-width: none; margin: var(--space-3) 0 0; font-size: var(--size-caption); color: var(--color-text-muted); }
 
 /* Каждый вопрос — кнопка с рамкой и стрелкой к панели ответа: видно, что на него нажимают.
    Выбранный — фон панели, латунная рамка и латунная стрелка. */
