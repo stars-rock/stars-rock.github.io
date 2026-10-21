@@ -3,18 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Игорь Верещагин — автоматизация работы с документами и данными</title>
-  <meta name="description" content="Игорь Верещагин, системный аналитик. Делаю программы, которые сверяют документы, ищут по архиву и сами собирают отчёты. Работаю с AI-агентами, RAG и локальными моделями.">
-  <meta property="og:title" content="Игорь Верещагин — автоматизация работы с документами и данными">
-  <meta property="og:description" content="Программы, которые сверяют документы, ищут по архиву и сами собирают отчёты.">
-  <!-- og:image, og:url и canonical — абсолютные адреса: часть мессенджеров относительный путь
-       не подхватывает. Сменится домен — заменить `https://stars-rock.github.io` во всех трёх. -->
+  <title>Верещагин Игорь — студия искусственного интеллекта: документы, отчёты и сверки без рутины</title>
+  <meta name="description" content="Студия искусственного интеллекта для малого бизнеса: документы в Excel, отчёты, сверки. Небольшая задача — от 6 000 ₽ и 3 дней. В облако данные уходят только с вашего согласия.">
+  <meta property="og:title" content="Верещагин Игорь — студия искусственного интеллекта: документы, отчёты и сверки без рутины">
+  <meta property="og:description" content="Небольшая задача — от 6 000 ₽ и 3 дней. В облако данные уходят только с вашего согласия.">
   <link rel="canonical" href="https://stars-rock.github.io/">
   <meta property="og:url" content="https://stars-rock.github.io/">
   <meta property="og:image" content="https://stars-rock.github.io/assets/img/og.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Игорь Верещагин — автоматизирую ручную работу с документами и данными">
+  <meta property="og:image:alt" content="Логотип «Верещагин Игорь, студия искусственного интеллекта» и заголовок: сотрудник полдня собирает отчёт? Это можно отдать программе">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ru_RU">
   <meta name="twitter:card" content="summary_large_image">
@@ -28,13 +26,17 @@
 <body>
   <a class="skip-link" href="#main">К содержимому</a>
 
-  <header class="site-header" data-header hidden>
+  <header class="site-header">
     <div class="site-header__inner">
-      <span class="site-header__mark">Игорь Верещагин</span>
+      <a class="site-header__logo" href="#hero" aria-label="Верещагин Игорь, студия искусственного интеллекта — в начало страницы">
+        <img src="assets/icons/logo.svg" width="310" height="48" alt="">
+      </a>
       <nav class="site-header__nav" aria-label="Основная навигация">
+        <a href="#prices">Цены</a>
         <a href="#services">Услуги</a>
+        <a href="#analytics">Аналитика</a>
         <a href="#cases">Кейсы</a>
-        <a href="#process">Как работаю</a>
+        <a href="#security">Безопасность</a>
         <a href="#contact">Контакт</a>
       </nav>
       <a class="button" href="#contact">Связаться</a>
@@ -45,12 +47,11 @@
     <section class="section--hero" id="hero" aria-labelledby="hero-title">
       <div class="hero__inner">
         <div class="hero__content">
-          <p class="hero__eyebrow">Игорь Верещагин · системный аналитик · базы данных и автоматизация</p>
-          <h1 id="hero-title" class="hero__title">Автоматизирую ручную работу с документами и данными</h1>
-          <p class="hero__lead">Например, сверку документов, поиск по архиву или отчёт, который каждую неделю собирают вручную. Начинаю с разбора задачи и довожу до работающей системы. Внутри обычно AI-агенты, RAG и локальные модели.</p>
+          <h1 id="hero-title" class="hero__title"><span>Сотрудник полдня собирает отчёт?</span> <span>Это можно отдать программе</span></h1>
+          <p class="hero__lead">Я беру одну рутинную задачу и настраиваю так, чтобы она выполнялась сама: перенос документов в Excel, регулярный отчёт, сверка. Небольшая задача — от 6&nbsp;000&nbsp;₽ и 3&nbsp;дней. Без вашего согласия документы никуда не уходят.</p>
           <div class="hero__actions">
             <a class="button button--accent" href="#contact">Обсудить задачу</a>
-            <a class="hero__link" href="#cases">Смотреть кейсы</a>
+            <a class="hero__link" href="#prices">Цены и сроки</a>
           </div>
         </div>
         <figure class="hero__schema" aria-hidden="true">
@@ -166,179 +167,58 @@
           </svg>
         </figure>
         <ul class="hero__facts" role="list">
-          <li><strong>ГОСТ 34, ISO/IEC/IEEE 15288 и 29148</strong><span>Системный анализ и проектирование автоматизированных систем</span></li>
-          <li><strong>Команды до 15 человек</strong><span>Руководил командами и проектами автоматизации</span></li>
-          <li><strong>Локальные модели</strong><span>Модель можно поставить на ваш сервер</span></li>
+          <li><strong>Цена и срок — до начала</strong><span>Называю после разбора задачи. Меняются, только если меняется задача, и с вашего согласия</span></li>
+          <li><strong>Данные под вашим контролем</strong><span>По умолчанию обработка на вашем сервере, в облако — только с вашего письменного согласия</span></li>
+          <li><strong>Результат ваш</strong><span>Исходный код, права на него и инструкция переходят вам по договору после приёмки и оплаты</span></li>
         </ul>
       </div>
     </section>
 
     <section class="section" id="problems" aria-labelledby="problems-title">
       <h2 id="problems-title">С чем приходят</h2>
+      <p class="section__lead">Юрфирмы, бухгалтерский аутсорс, медцентры, проектные бюро — везде, где много документов.</p>
+      <figure class="stats reveal">
+        <ul class="stats__list" role="list">
+          <li><strong class="stats__value">1 из 3</strong><span>офисных сотрудников тратит на рутину от 2 до 4 и более часов в день</span></li>
+          <li><strong class="stats__value">55%</strong><span>относят к регулярной рутине сбор и хранение документов</span></li>
+          <li><strong class="stats__value">27%</strong><span>называют долгий поиск документов одним из главных барьеров в работе</span></li>
+        </ul>
+        <figcaption class="stats__source">Источник: <a class="source" href="https://www.comnews.ru/content/239735/2025-06-18/2025-w25/1010/kazhdyy-tretiy-ofisnyy-sotrudnik-rossiyskoy-kompanii-tratit-2-do-4-i-bolee-chasov-rabochego-vremeni-den-rutinu" target="_blank" rel="noopener noreferrer">НАФИ и Яндекс&nbsp;360, 2025, опрос 1&nbsp;400 офисных сотрудников<span class="sr-only"> (откроется в новой вкладке)</span></a></figcaption>
+      </figure>
       <ul class="problems" role="list">
         <li class="problems__row reveal">
           <span class="problems__num" aria-hidden="true">01</span>
           <div class="problems__body">
-            <p class="problems__pain">ИИ уже пробовали внедрить, но получилась игрушка, и работать с ней не стали.</p>
-            <p class="problems__change">Одного промпта тут мало. Я встраиваю систему в процесс: собираю ей базу знаний, пишу регламент и порядок, по которому с ней работают. <a href="#process">Как строится работа</a></p>
+            <p class="problems__pain">Сотрудник полдня собирает один и тот же отчёт из таблиц и учётной программы.</p>
+            <p class="problems__change">Отчёт собирается одним запуском или сам по расписанию, сотруднику остаётся его проверить. <a href="#prices">Сколько стоит</a></p>
           </div>
         </li>
         <li class="problems__row reveal">
           <span class="problems__num" aria-hidden="true">02</span>
           <div class="problems__body">
-            <p class="problems__pain">Сотрудники сверяют документы вручную, переносят данные из одной системы в другую и подолгу ищут в архиве то, что там точно есть.</p>
-            <p class="problems__change">Это можно отдать программе. Человеку останутся спорные случаи. <a href="#cases">Кейс: сверка отчётности</a></p>
+            <p class="problems__pain">Акты, выписки и счета сверяют вручную и всё равно ошибаются.</p>
+            <p class="problems__change">Система сверяет по правилам и показывает найденные расхождения. Спорные случаи разбирает человек. <a href="#case-finance">Кейс: сверка отчётности</a></p>
           </div>
         </li>
         <li class="problems__row reveal">
           <span class="problems__num" aria-hidden="true">03</span>
           <div class="problems__body">
-            <p class="problems__pain">Как что устроено, знают несколько человек. Кто-то ушёл в отпуск, и работа встала.</p>
-            <p class="problems__change">Собираю решения и знания в одну базу. Искать в ней можно своими словами, точная формулировка не нужна. <a href="#inside">Как это выглядит</a></p>
+            <p class="problems__pain">В архиве всё есть, но найти нужный договор или акт не может никто.</p>
+            <p class="problems__change">Спрашиваете своими словами и получаете ответ со ссылкой на документ. <a href="#inside">Как это выглядит</a></p>
           </div>
         </li>
-      </ul>
-    </section>
-
-    <section class="section" id="services" aria-labelledby="services-title">
-      <h2 id="services-title">Услуги</h2>
-      <p class="section__lead">Под каждой услугой написано, что вы получите и где я это уже делал.</p>
-      <ul class="bento" role="list">
-        <li class="bento__item bento__item--large reveal">
-          <h3>AI-автоматизация бизнес-процессов</h3>
-          <p>Агенты берут на себя ручную работу: разбирают входящие документы, готовят ответы, переносят данные из системы в систему.</p>
-          <dl class="bento__meta">
-            <div><dt>На выходе</dt><dd>Работающий сценарий, база знаний и регламент внедрения</dd></div>
-            <div><dt>Кейс</dt><dd><a href="#case-agents">Автоматизация на AI-агентах</a></dd></div>
-          </dl>
-        </li>
-        <li class="bento__item bento__item--large reveal">
-          <h3>RAG и семантический поиск по корпоративным данным</h3>
-          <p>Разбираю архив, складываю его в векторную базу и настраиваю ранжирование. Спросить можно своими словами, а в ответе будет ссылка на исходный документ.</p>
-          <dl class="bento__meta">
-            <div><dt>На выходе</dt><dd>Поиск по вашему архиву с ответом и ссылкой на документ</dd></div>
-            <div><dt>Кейс</dt><dd><a href="#case-rag">Поиск по документам</a>, <a href="#case-ranking">ранжирование потока</a></dd></div>
-          </dl>
-        </li>
-        <li class="bento__item bento__item--small bento__item--wide reveal">
-          <h3>Приложения и интерфейсы к системам</h3>
-          <p>Делаю к системам веб-интерфейсы: дашборды, загрузку и разбор документов, администрирование. Есть брендбук — рисую по нему. Нет — сначала согласуем макет, верстаю после.</p>
-          <dl class="bento__meta">
-            <div><dt>Кейс</dt><dd><a href="#case-finance">Платформа сверки отчётности</a></dd></div>
-          </dl>
-        </li>
-        <li class="bento__item bento__item--small reveal">
-          <h3>Аналитика и технологические обзоры</h3>
-          <p>Сравниваю платформы и решения, смотрю, что подойдёт под задачу, и пишу обоснование выбора для инвесткомитета или профильного ведомства.</p>
-          <dl class="bento__meta">
-            <div><dt>Кейс</dt><dd><a href="#case-agro">Инвестпроект в агропроме</a></dd></div>
-          </dl>
-        </li>
-        <li class="bento__item bento__item--small bento__item--narrow reveal">
-          <h3>Регулярные отчёты без ручной сборки</h3>
-          <p>Отчёт собирается из базы сам. Получается готовый Excel с нужными листами, итогами и примечаниями, его можно сразу печатать.</p>
-          <dl class="bento__meta">
-            <div><dt>На выходе</dt><dd>Отчёт, который собирается сам</dd></div>
-          </dl>
-        </li>
-      </ul>
-    </section>
-
-    <section class="section" id="cases" aria-labelledby="cases-title">
-      <h2 id="cases-title">Кейсы</h2>
-      <p class="section__lead">Заказчиков и их данные не называю.</p>
-      <ul class="cases" role="list">
-        <li class="case-featured reveal" id="case-finance">
-          <p class="case-featured__kicker">Самый большой проект · финансы</p>
-          <h3>AI-платформа сверки финансовой отчётности</h3>
-          <p class="case-featured__problem">Пакеты документов приходили в каком угодно оформлении, и сверяли их вручную.</p>
-
-          <div class="case-featured__grid">
-            <div class="case-featured__main">
-              <div class="case-decision">
-                <span class="case__label">Главное решение</span>
-                <p>Цифры модель не считает. Сверяют правила, а модель подключается только в спорных случаях. Если она не уверена, документ уходит человеку.</p>
-              </div>
-              <ol class="case-flow">
-                <li><strong>Распознавание</strong><span>Тип и структура документа, 10 типов финансовых форм</span></li>
-                <li><strong>Нормализация</strong><span>Разнородные выписки, балансы и расшифровки — к единому виду</span></li>
-                <li><strong>Сверка по правилам</strong><span>Каталог правил, объяснение каждого расхождения</span></li>
-                <li><strong>Спорные случаи</strong><span>Дообученная локальная модель, при низкой уверенности — человек</span></li>
-                <li><strong>Выгрузка</strong><span>Результаты для аудитора</span></li>
-              </ol>
-            </div>
-
-            <figure class="case-report">
-              <figcaption><span class="chip">Условный пример</span>Строка отчёта о расхождениях</figcaption>
-              <dl class="case-report__rows">
-                <div><dt>Баланс, строка 1250</dt><dd>1&nbsp;204&nbsp;570&nbsp;₽</dd></div>
-                <div><dt>ОСВ, сальдо сч. 51</dt><dd>1&nbsp;186&nbsp;140&nbsp;₽</dd></div>
-                <div class="case-report__diff"><dt>Расхождение</dt><dd>18&nbsp;430&nbsp;₽</dd></div>
-              </dl>
-              <p class="case-report__why"><span class="case__label">Объяснение</span>Остаток валютного счёта 52 входит в строку 1250, а ОСВ по нему в пакете нет. Запросить ОСВ по сч. 52.</p>
-            </figure>
+        <li class="problems__row reveal">
+          <span class="problems__num" aria-hidden="true">04</span>
+          <div class="problems__body">
+            <p class="problems__pain">ИИ уже пробовали, получилась игрушка, и работать с ней не стали.</p>
+            <p class="problems__change">Начинаю с одной задачи и довожу её до ежедневной работы: пишу инструкцию, кто и как пользуется системой. <a href="#process">Как строится работа</a></p>
           </div>
-
-          <div class="case-featured__foot">
-            <div class="case__tags">
-              <span class="case__tag">FastAPI</span>
-              <span class="case__tag">Vue 3</span>
-              <span class="case__tag">PostgreSQL</span>
-              <span class="case__tag">Redis</span>
-              <span class="case__tag">локальная LLM</span>
-            </div>
-            <p class="case-featured__status">Доведена до рабочей версии с веб-интерфейсом</p>
-          </div>
-        </li>
-
-        <li class="case-card reveal" id="case-agents">
-          <div class="case-card__head"><span class="case-card__num" aria-hidden="true">02</span><h3>Автоматизация бизнес-процессов на AI-агентах</h3></div>
-          <p class="case-card__problem"><span class="sr-only">Задача: </span>Одни и те же операции делали руками раз за разом, а как их делать, знали только сотрудники.</p>
-          <ul class="dots" role="list" aria-label="Сделано">
-            <li>Рабочие процессы опираются на общую базу знаний</li>
-            <li>Все решения записываются в одном месте</li>
-            <li>План внедрения по этапам и анкета для заказчика</li>
-          </ul>
-          <p class="case-card__stack"><span class="sr-only">Стек: </span>AI-агенты · база знаний · регламенты</p>
-        </li>
-
-        <li class="case-card reveal" id="case-rag">
-          <div class="case-card__head"><span class="case-card__num" aria-hidden="true">03</span><h3>RAG-система поиска по документам</h3></div>
-          <p class="case-card__problem"><span class="sr-only">Задача: </span>Архив файлов, в котором ничего нельзя было найти.</p>
-          <ul class="dots" role="list" aria-label="Сделано">
-            <li>Из PDF, DOCX, PPTX и XLSX достаются текст, таблицы и картинки</li>
-            <li>Документы режутся на фрагменты и переводятся в векторы</li>
-            <li>Дубли отсеиваются по хэшу содержимого</li>
-          </ul>
-          <p class="case-card__stack"><span class="sr-only">Стек: </span>Python · PostgreSQL · pgvector · эмбеддинги</p>
-        </li>
-
-        <li class="case-card reveal" id="case-ranking">
-          <div class="case-card__head"><span class="case-card__num" aria-hidden="true">04</span><h3>Семантический поиск и ранжирование данных</h3></div>
-          <p class="case-card__problem"><span class="sr-only">Задача: </span>Поток разнородных записей, который некому было разбирать.</p>
-          <ul class="dots" role="list" aria-label="Сделано">
-            <li>Записи из потока попадают в векторный индекс</li>
-            <li>Наверху оказываются самые подходящие</li>
-            <li>Шум отсеивается, приоритет расставляется автоматически</li>
-          </ul>
-          <p class="case-card__stack"><span class="sr-only">Стек: </span>Qdrant · pgvector · эмбеддинг-модели</p>
-        </li>
-
-        <li class="case-card reveal" id="case-agro">
-          <div class="case-card__head"><span class="case-card__num" aria-hidden="true">05</span><h3>Отраслевой инвестиционный проект в агропроме</h3></div>
-          <p class="case-card__problem"><span class="sr-only">Задача: </span>Нужно было понять, какие роботизированные решения подойдут и зачем в проекте ИИ.</p>
-          <ul class="dots" role="list" aria-label="Сделано">
-            <li>Сравнил роботизированные платформы и оценил, какие из них применимы</li>
-            <li>Сделал выводы и подкрепил их аргументами для заказчика</li>
-            <li>Обосновал, где в проекте нужны ИИ и RAG-система</li>
-          </ul>
-          <p class="case-card__stack"><span class="sr-only">Стек: </span>аналитика рынка · архитектурные схемы · отраслевые стандарты</p>
         </li>
       </ul>
     </section>
 
     <section class="section" id="inside" aria-labelledby="inside-title">
-      <h2 id="inside-title">Как устроено внутри</h2>
+      <h2 id="inside-title">Как это выглядит</h2>
       <p class="section__lead">Пример на архиве договоров. Вопрос задан обычными словами, и у каждой цифры в ответе есть ссылка на документ, откуда она взята.</p>
       <figure class="demo reveal">
         <figcaption class="demo__head">
@@ -396,9 +276,310 @@
         </ol>
 
         <ul class="demo__notes" role="list">
-          <li><strong>Ссылка у каждого утверждения</strong><span>Указаны файл и страница, так что для проверки хватит открыть один документ.</span></li>
+          <li><strong>Ссылка у каждого утверждения</strong><span>Указаны файл и страница, поэтому проверить ответ можно за минуту.</span></li>
           <li><strong>Ищет по смыслу</strong><span>«Лимит ответственности» найдётся, даже если в тексте написано «ограничена суммой».</span></li>
           <li><strong>Может работать у вас</strong><span>Если документы нельзя отдавать в чужие сервисы, модель ставится на ваш сервер.</span></li>
+        </ul>
+      </figure>
+    </section>
+
+    <section class="section" id="prices" aria-labelledby="prices-title">
+      <h2 id="prices-title">Задача, срок, цена</h2>
+      <p class="section__lead">Три небольшие задачи, с которых можно начать. Срок считается с момента, когда получены примеры документов.</p>
+      <ul class="offers" role="list">
+        <li class="offer reveal">
+          <h3 class="offer__title">Документы в таблицу Excel</h3>
+          <p class="offer__what">Достаю нужные поля из PDF и ровных сканов и собираю в одну таблицу.</p>
+          <dl class="offer__terms">
+            <div><dt>Объём</dt><dd>1 тип документа, до 20 файлов, до 10 полей</dd></div>
+            <div><dt>Срок</dt><dd>3&nbsp;дня</dd></div>
+          </dl>
+          <p class="offer__price"><span class="sr-only">Цена: </span>6&nbsp;000&nbsp;₽</p>
+        </li>
+        <li class="offer reveal">
+          <h3 class="offer__title">Отчёт из базы в Excel</h3>
+          <p class="offer__what">Пишу запрос к вашей базе данных и делаю выгрузку в Excel. Запрос остаётся у вас, и отчёт можно собирать заново.</p>
+          <dl class="offer__terms">
+            <div><dt>Объём</dt><dd>1 отчёт</dd></div>
+            <div><dt>Срок</dt><dd>4&nbsp;дня</dd></div>
+          </dl>
+          <p class="offer__price"><span class="sr-only">Цена: </span>7&nbsp;000&nbsp;₽</p>
+        </li>
+        <li class="offer reveal">
+          <h3 class="offer__title">Почему тормозит база данных</h3>
+          <p class="offer__what">Нахожу 10 самых медленных операций в вашей базе данных PostgreSQL и пишу, как их ускорить. В саму базу ничего не вношу.</p>
+          <dl class="offer__terms">
+            <div><dt>Объём</dt><dd>Отчёт по 10 запросам с рекомендациями</dd></div>
+            <div><dt>Срок</dt><dd>3&nbsp;дня</dd></div>
+          </dl>
+          <p class="offer__price"><span class="sr-only">Цена: </span>6&nbsp;000&nbsp;₽</p>
+        </li>
+      </ul>
+      <div class="payback reveal" role="group" aria-labelledby="payback-title">
+        <h3 class="payback__title" id="payback-title">Условный расчёт: регулярный отчёт за 7&nbsp;000&nbsp;₽</h3>
+        <ul class="payback__cols" role="list">
+          <li>
+            <p class="payback__label">Без системы</p>
+            <p class="payback__value">≈&nbsp;11&nbsp;300&nbsp;₽</p>
+            <p class="payback__text">в месяц: сотрудник собирает отчёт 4&nbsp;часа в неделю</p>
+          </li>
+          <li>
+            <p class="payback__label">С системой</p>
+            <p class="payback__value">≈&nbsp;1&nbsp;400&nbsp;₽</p>
+            <p class="payback__text">в месяц: сотрудник запускает отчёт одной командой и проверяет, на это уходит 30&nbsp;минут в неделю</p>
+          </li>
+          <li class="payback__result">
+            <p class="payback__label">Экономия</p>
+            <p class="payback__value">≈&nbsp;9&nbsp;900&nbsp;₽</p>
+            <p class="payback__text">в месяц, работа окупается примерно за 3&nbsp;недели</p>
+          </li>
+        </ul>
+        <p class="payback__source">Час сотрудника взят с запасом — 650&nbsp;₽. Средняя начисленная зарплата по России в июне 2026&nbsp;года — 114&nbsp;743&nbsp;₽ по данным Росстата, это около 700&nbsp;₽ за час при 164&nbsp;рабочих часах в месяце. Страховые взносы не учтены. Если час стоит 400&nbsp;₽, работа окупается примерно за 5&nbsp;недель. Время на отчёт у вас может быть другим, поэтому расчёт условный.</p>
+      </div>
+      <p class="offers__note">Цены — ориентир, по ним я работаю на Kwork, и это не оферта. Точную цену и срок называю после разбора задачи и до начала работы. Большие системы считаются после разбора. Свою окупаемость можно прикинуть так же: часы, которые сотрудник тратит на задачу руками, умножить на стоимость его часа и сравнить с ценой работы.</p>
+    </section>
+
+    <section class="section" id="services" aria-labelledby="services-title">
+      <h2 id="services-title">Что ещё делаю</h2>
+      <p class="section__lead">Под услугами указано, что вы получите. Где есть пример, даю ссылку на кейс.</p>
+      <ul class="bento" role="list">
+        <li class="bento__item bento__item--large reveal">
+          <h3>Рутину делает программа, а не сотрудник</h3>
+          <p>Программа разбирает входящие документы, готовит черновики ответов и переносит данные туда, где они нужны. Сотрудник проверяет и решает спорное.</p>
+          <dl class="bento__meta">
+            <div><dt>На выходе</dt><dd>Настроенная работа и инструкция для сотрудников</dd></div>
+            <div><dt>Кейс</dt><dd><a href="#case-agents">Ручные операции</a></dd></div>
+          </dl>
+        </li>
+        <li class="bento__item bento__item--large reveal">
+          <h3>Ответ из архива со ссылкой на документ</h3>
+          <p>Спрашиваете, как спросили бы коллегу. В ответе — цифра или формулировка и ссылка на документ и страницу, откуда она взята.</p>
+          <dl class="bento__meta">
+            <div><dt>На выходе</dt><dd>Поиск по вашему архиву с ответом и ссылкой на документ</dd></div>
+            <div><dt>Кейс</dt><dd><a href="#case-rag">Поиск по архиву</a>, <a href="#case-ranking">сортировка по важности</a></dd></div>
+          </dl>
+        </li>
+        <li class="bento__item bento__item--small bento__item--wide reveal">
+          <h3>Отчёты в Excel без ручной сборки</h3>
+          <p>Отчёт собирается из базы или таблиц без участия сотрудника. Готовый Excel с нужными листами, итогами и примечаниями можно сразу печатать.</p>
+          <dl class="bento__meta">
+            <div><dt>На выходе</dt><dd>Отчёт по расписанию или по одному запуску</dd></div>
+          </dl>
+        </li>
+        <li class="bento__item bento__item--small reveal">
+          <h3>Страница, где сотрудник проверяет результат</h3>
+          <p>Веб-страница, где сотрудник загружает документы, видит результат и правит спорное. Есть брендбук — делаю по нему, нет — сначала согласуем макет.</p>
+          <dl class="bento__meta">
+            <div><dt>Кейс</dt><dd><a href="#case-finance">Сверка отчётности</a></dd></div>
+          </dl>
+        </li>
+        <li class="bento__item bento__item--small bento__item--narrow reveal">
+          <h3>Что выбрать: готовую программу или разработку</h3>
+          <p>Сравниваю готовые решения и пишу, что подойдёт под вашу задачу и почему.</p>
+          <dl class="bento__meta">
+            <div><dt>Кейс</dt><dd><a href="#case-ai-tools">ИИ-инструменты для команды</a></dd></div>
+          </dl>
+        </li>
+      </ul>
+    </section>
+
+    <section class="section" id="analytics" aria-labelledby="analytics-title">
+      <h2 id="analytics-title">Аналитика: сначала разобраться</h2>
+      <p class="section__lead">Если задача больше, чем на три дня, сначала смотрю, где на самом деле уходят время и деньги. После разбора вы знаете, что автоматизировать, сколько это стоит и когда окупится, и решаете, браться ли.</p>
+      <ol class="study reveal" role="list">
+        <li class="study__step">
+          <span class="study__num" aria-hidden="true">01</span>
+          <h3 class="study__title">Разбор процессов</h3>
+          <p class="study__what">Смотрю, как сейчас идут документы и данные: кто что делает руками, где ошибаются и где ждут. Говорю с сотрудниками, которые делают эту работу.</p>
+          <p class="study__out"><span>Вы получаете</span>Схему процесса и список мест, где теряется время. <a href="#case-agro">Кейс: обследование теплиц</a></p>
+        </li>
+        <li class="study__step">
+          <span class="study__num" aria-hidden="true">02</span>
+          <h3 class="study__title">Расчёт эффекта</h3>
+          <p class="study__what">Считаю, сколько часов и денег уходит сейчас и сколько будет уходить после автоматизации.</p>
+          <p class="study__out"><span>Вы получаете</span>Расчёт «без системы / с системой» и срок окупаемости. <a href="#payback-title">Пример расчёта</a></p>
+        </li>
+        <li class="study__step">
+          <span class="study__num" aria-hidden="true">03</span>
+          <h3 class="study__title">Техническое задание</h3>
+          <p class="study__what">Описываю, что должна делать система. Пишу понятным языком и так, чтобы по заданию мог работать любой исполнитель, а не только я.</p>
+          <p class="study__out"><span>Вы получаете</span>Техническое задание, которое остаётся у вас.</p>
+        </li>
+        <li class="study__step">
+          <span class="study__num" aria-hidden="true">04</span>
+          <h3 class="study__title">Выбор решения</h3>
+          <p class="study__what">Сравниваю готовые программы с разработкой под вас: что подойдёт, сколько стоит, какие риски.</p>
+          <p class="study__out"><span>Вы получаете</span>Обоснование с выводом. <a href="#case-ai-tools">Кейс: ИИ-инструменты для команды</a></p>
+        </li>
+      </ol>
+      <h3 class="analytics__where">Где делал</h3>
+      <ul class="cases cases--pair" role="list">
+        <li class="case-card reveal" id="case-agro">
+          <div class="case-card__head"><h4>Агропром: рынок и обследование теплиц</h4></div>
+          <p class="case-card__problem"><span class="sr-only">Задача: </span>Перед внедрением цифрового мониторинга теплиц нужно было разобраться в рынке и подготовить обследование предприятия.</p>
+          <ul class="dots" role="list" aria-label="Сделано">
+            <li>Разобрал почти 30 российских разработчиков программ для теплиц и зарубежные системы мониторинга растений: функции и цены</li>
+            <li>Подготовил анкеты обследования для пяти ролей, от руководителя до оператора</li>
+            <li>Спланировал интервью и разбор потерь на каждом этапе производства</li>
+          </ul>
+        </li>
+        <li class="case-card reveal" id="case-ai-tools">
+          <div class="case-card__head"><h4>Транспорт: какие ИИ-инструменты дать команде</h4></div>
+          <p class="case-card__problem"><span class="sr-only">Задача: </span>Крупный ИТ-проект городского такси, я аналитик в команде проекта. Руководству нужно было решить, какие ИИ-инструменты дать команде и во что это обойдётся.</p>
+          <ul class="dots" role="list" aria-label="Сделано">
+            <li>Сравнил каждый инструмент с аналогами и варианты внедрения</li>
+            <li>Расписал, какой инструмент нужен каждой из восьми ролей, и посчитал стоимость пробного запуска и полного внедрения</li>
+            <li>Описал риски и закончил документ решением, которое нужно утвердить</li>
+          </ul>
+        </li>
+      </ul>
+      <p class="analytics__team">Если в задаче нужен узкий специалист, подключаю коллег, с которыми работал на проектах: специалистов по нейросетям и сетевой безопасности, системных аналитиков, программистов. Кого подключить, согласуем до начала работы. Доступ к вашим данным они получают только с вашего согласия.</p>
+      <p class="offers__note">Цену разбора называю после первого разговора: она зависит от того, сколько процессов смотреть. Остановиться можно после любого шага.</p>
+    </section>
+
+    <section class="section" id="cases" aria-labelledby="cases-title">
+      <h2 id="cases-title">Кейсы</h2>
+      <p class="section__lead">Заказчиков и их данные не называю.</p>
+      <ul class="cases" role="list">
+        <li class="case-featured reveal" id="case-finance">
+          <div class="case-featured__intro">
+            <p class="case-featured__kicker">Самый большой проект · финансы</p>
+            <h3>Сверка финансовой отчётности</h3>
+            <p class="case-featured__problem">Пакеты документов приходили в каком угодно оформлении, и сверяли их вручную.</p>
+            <div class="case-decision">
+              <span class="case__label">Главное решение</span>
+              <p>Цифры сверяют правила, а не модель. Она подключается только в спорных случаях, а если не уверена — документ уходит человеку.</p>
+            </div>
+            <p class="case-featured__status">Рабочая версия с веб-интерфейсом. Модель локальная, документы не уходят в сторонние сервисы.</p>
+          </div>
+
+          <ol class="case-flow">
+            <li><strong>Распознавание</strong><span>Тип и структура документа, 10 типов финансовых форм</span></li>
+            <li><strong>Приведение к единому виду</strong><span>Разнородные выписки, балансы и расшифровки</span></li>
+            <li><strong>Сверка по правилам</strong><span>Список правил, объяснение каждого найденного расхождения</span></li>
+            <li><strong>Спорные случаи</strong><span>Нейросеть, обученная на примерах, а если она не уверена — человек</span></li>
+            <li><strong>Выгрузка</strong><span>Результаты для аудитора</span></li>
+          </ol>
+
+          <figure class="case-report">
+            <figcaption><span class="chip">Условный пример</span>Строка отчёта о расхождениях</figcaption>
+            <dl class="case-report__rows">
+              <div><dt>Баланс, строка 1250</dt><dd>1&nbsp;204&nbsp;570&nbsp;₽</dd></div>
+              <div><dt>ОСВ, сальдо сч. 51</dt><dd>1&nbsp;186&nbsp;140&nbsp;₽</dd></div>
+              <div class="case-report__diff"><dt>Расхождение</dt><dd>18&nbsp;430&nbsp;₽</dd></div>
+            </dl>
+            <p class="case-report__why"><span class="case__label">Объяснение</span>Остаток валютного счёта 52 входит в строку 1250, а ОСВ по нему в пакете нет. Запросить ОСВ по сч. 52.</p>
+          </figure>
+        </li>
+
+        <li class="case-card reveal" id="case-agents">
+          <div class="case-card__head"><span class="case-card__num" aria-hidden="true">02</span><h3>Ручные операции перешли к программе</h3></div>
+          <p class="case-card__problem"><span class="sr-only">Задача: </span>Одни и те же операции делали руками раз за разом, а как их делать, знали только сотрудники.</p>
+          <ul class="dots" role="list" aria-label="Сделано">
+            <li>Программа берёт сведения из общего справочника, а не из памяти сотрудников</li>
+            <li>Каждое решение записано, и видно, почему сделано именно так</li>
+            <li>План запуска по шагам и анкета для заказчика</li>
+          </ul>
+        </li>
+
+        <li class="case-card reveal" id="case-rag">
+          <div class="case-card__head"><span class="case-card__num" aria-hidden="true">03</span><h3>Поиск по архиву документов</h3></div>
+          <p class="case-card__problem"><span class="sr-only">Задача: </span>Документы в архиве были, но найти нужный никто не мог.</p>
+          <ul class="dots" role="list" aria-label="Сделано">
+            <li>Программа читает PDF, Word, презентации и таблицы, даже с таблицами и картинками внутри</li>
+            <li>Искать можно своими словами</li>
+            <li>Если документ лежит в нескольких копиях, в ответе он один</li>
+          </ul>
+        </li>
+
+        <li class="case-card reveal" id="case-ranking">
+          <div class="case-card__head"><span class="case-card__num" aria-hidden="true">04</span><h3>Важное — наверх, лишнее — в сторону</h3></div>
+          <p class="case-card__problem"><span class="sr-only">Задача: </span>Записи шли сплошным потоком, и разбирать их было некому.</p>
+          <ul class="dots" role="list" aria-label="Сделано">
+            <li>Каждая новая запись сразу получает оценку</li>
+            <li>Наверху оказываются самые подходящие</li>
+            <li>Лишнее отсеивается само</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section class="section" id="security" aria-labelledby="security-title">
+      <h2 id="security-title">Безопасность данных</h2>
+      <p class="section__lead">Работаю по закону о персональных данных (152-ФЗ). Где обрабатываются документы, решаете вы, и это записывается в договор.</p>
+
+      <figure class="dataflow reveal">
+        <figcaption class="sr-only">Путь документов: от основного варианта к исключению</figcaption>
+        <svg class="dataflow__art" viewBox="0 19 1120 293" role="img" aria-labelledby="dataflow-art-title" focusable="false">
+          <title id="dataflow-art-title">Основной вариант — система работает внутри вашей компании, документы, база и архив её не покидают. Если своего сервера нет — обработка на моём оборудовании по договору и соглашению о конфиденциальности. В облачную модель — только с вашего письменного согласия и только фрагменты, где имена и номера заменены метками.</title>
+          <rect class="dataflow__zone dataflow__zone--main" x="1" y="20" width="520" height="290" rx="20"/>
+          <text class="dataflow__eyebrow" x="28" y="56">ВАША КОМПАНИЯ</text>
+          <text class="dataflow__big" x="28" y="92">Основной вариант</text>
+          <g class="dataflow__docs">
+            <circle cx="120" cy="150" r="3" opacity=".9"/><circle cx="150" cy="128" r="2.2" opacity=".7"/><circle cx="170" cy="170" r="3.2" opacity=".95"/>
+            <circle cx="205" cy="140" r="2" opacity=".6"/><circle cx="98" cy="190" r="2.4" opacity=".7"/><circle cx="140" cy="205" r="3" opacity=".85"/>
+            <circle cx="190" cy="215" r="2.2" opacity=".6"/><circle cx="230" cy="180" r="2.6" opacity=".8"/><circle cx="255" cy="145" r="1.8" opacity=".5"/>
+            <circle cx="118" cy="240" r="1.8" opacity=".5"/><circle cx="215" cy="250" r="2" opacity=".55"/><circle cx="265" cy="215" r="1.6" opacity=".45"/>
+            <circle cx="80" cy="150" r="1.6" opacity=".45"/><circle cx="175" cy="112" r="1.6" opacity=".45"/><circle cx="240" cy="116" r="1.4" opacity=".4"/>
+          </g>
+          <line class="dataflow__line" x1="285" y1="182" x2="344" y2="180"/>
+          <circle class="dataflow__ring" cx="360" cy="180" r="14"/><circle class="dataflow__dot" cx="360" cy="180" r="5"/>
+          <text class="dataflow__note" x="386" y="176">система работает</text>
+          <text class="dataflow__note" x="386" y="196">у вас</text>
+          <text class="dataflow__muted" x="28" y="282">Документы, база и архив не покидают компанию</text>
+
+          <line class="dataflow__line" x1="522" y1="165" x2="590" y2="165"/>
+          <rect class="dataflow__zone" x="590" y="70" width="230" height="190" rx="16"/>
+          <text class="dataflow__eyebrow" x="612" y="102">МОЁ ОБОРУДОВАНИЕ</text>
+          <text class="dataflow__strong" x="612" y="132">Если своего</text>
+          <text class="dataflow__strong" x="612" y="152">сервера нет</text>
+          <circle class="dataflow__ring" cx="628" cy="196" r="9"/>
+          <text class="dataflow__muted" x="612" y="234">по договору и соглашению</text>
+          <text class="dataflow__muted" x="612" y="252">о конфиденциальности</text>
+
+          <line class="dataflow__line dataflow__line--ext" x1="820" y1="165" x2="900" y2="165"/>
+          <circle class="dataflow__ring" cx="860" cy="165" r="13"/><circle class="dataflow__dot" cx="860" cy="165" r="4.5"/>
+          <line class="dataflow__line" x1="860" y1="180" x2="860" y2="284"/>
+          <text class="dataflow__muted" x="860" y="304" text-anchor="middle">имена и номера → метки</text>
+          <rect class="dataflow__zone dataflow__zone--ext" x="900" y="70" width="219" height="190" rx="16"/>
+          <text class="dataflow__eyebrow" x="922" y="102">ОБЛАЧНАЯ МОДЕЛЬ</text>
+          <text class="dataflow__strong" x="922" y="132">Только с вашего</text>
+          <text class="dataflow__strong" x="922" y="152">письменного согласия</text>
+          <circle class="dataflow__dot" cx="930" cy="196" r="4"/><circle class="dataflow__dot" cx="946" cy="196" r="4" opacity=".6"/><circle class="dataflow__dot" cx="962" cy="196" r="4" opacity=".35"/>
+          <text class="dataflow__muted" x="922" y="234">уходят фрагменты,</text>
+          <text class="dataflow__muted" x="922" y="252">а не архив целиком</text>
+        </svg>
+        <ol class="dataflow__flow">
+          <li class="dataflow__step">
+            <span class="dataflow__mark dataflow__mark--dot" aria-hidden="true"></span>
+            <span class="dataflow__label">Ваш сервер</span>
+            <div class="dataflow__box">
+              <strong>Основной вариант</strong>
+              <p>Система работает у вас: документы, база и архив не покидают компанию.</p>
+            </div>
+          </li>
+          <li class="dataflow__step">
+            <span class="dataflow__mark dataflow__mark--ring" aria-hidden="true"></span>
+            <span class="dataflow__label">Моё оборудование</span>
+            <div class="dataflow__box">
+              <strong>Если своего сервера нет</strong>
+              <p>Документы обрабатываются у меня по договору и соглашению о конфиденциальности.</p>
+            </div>
+          </li>
+          <li class="dataflow__step dataflow__step--ext">
+            <span class="dataflow__mark dataflow__mark--end" aria-hidden="true"></span>
+            <span class="dataflow__label">Облачная модель</span>
+            <div class="dataflow__box">
+              <strong>Только с вашего письменного согласия</strong>
+              <p>Это указывается в поручении на обработку. Сначала предлагаю российские сервисы, например GigaChat. Зарубежный — только с вашего прямого согласия: это передача данных за рубеж, до неё нужно уведомить Роскомнадзор.</p>
+            </div>
+          </li>
+        </ol>
+
+        <ul class="dataflow__notes" role="list">
+          <li><strong>Имена и номера — метками</strong><span>Перед отправкой в облако имена, телефоны, адреса и номера документов заменяются метками, состав замен согласуем заранее. Таблица соответствия остаётся у вас. По закону такие фрагменты могут считаться персональными данными, поэтому отправка всё равно записывается в договор.</span></li>
+          <li><strong>Персональные данные и 152-ФЗ</strong><span>Вы как оператор оформляете мне поручение на обработку: что я делаю с данными, зачем и как их защищаю. За его рамки я не выхожу, облако тоже указывается в нём. Сначала предлагаю российские сервисы, например GigaChat. Зарубежный — только с вашего прямого согласия и после того, как вы выполнили требования закона к передаче за рубеж, включая уведомление Роскомнадзора.</span></li>
+          <li><strong>Сколько стоит своя модель</strong><span>Видеокарта RTX 5060 Ti 16&nbsp;ГБ — от 78&nbsp;999&nbsp;₽, RTX 4090 24&nbsp;ГБ — 209&nbsp;999&nbsp;₽ (<a class="source" href="https://www.dns-shop.ru/search/?q=rtx" target="_blank" rel="noopener noreferrer">DNS, октябрь 2026<span class="sr-only"> (откроется в новой вкладке)</span></a>). Сервер с RTX 4090 можно арендовать примерно за 83&nbsp;₽ в час (<a class="source" href="https://immers.cloud/gpu/" target="_blank" rel="noopener noreferrer">immers.cloud<span class="sr-only"> (откроется в новой вкладке)</span></a>). GigaChat Lite в облаке — 0,065&nbsp;₽ за 1&nbsp;000 токенов с НДС (<a class="source" href="https://developers.sber.ru/docs/ru/gigachat/tariffs/legal-tariffs" target="_blank" rel="noopener noreferrer">тарифы Сбера<span class="sr-only"> (откроется в новой вкладке)</span></a>); сначала нужные куски находит модель на вашем сервере, и в облако уходят только они. Цены указаны на дату проверки, перед покупкой их стоит уточнить.</span></li>
         </ul>
       </figure>
     </section>
@@ -406,23 +587,19 @@
     <section class="section" id="process" aria-labelledby="process-title">
       <h2 id="process-title">Как строится работа</h2>
       <p class="section__lead">По каждому этапу заранее понятно, что делаю я, что нужно от вас и что вы получите. Продолжать или нет, решаете вы.</p>
-      <ul class="terms" role="list">
-        <li>Цену и срок называю до начала, по ходу они не растут</li>
-        <li>Результат отдаю с инструкцией, чтобы вы могли разобраться без меня</li>
-      </ul>
-
-      <ol class="stages reveal">
+      <div class="stages-panel reveal">
+      <ol class="stages">
         <li class="stages__step">
           <span class="stages__dot" aria-hidden="true"></span>
           <span class="stages__num">01</span><h3>Разбор задачи</h3>
           <p class="stages__block"><span>Делаю</span>Выясняю, что делается руками и сколько времени на это уходит</p>
-          <p class="stages__block stages__block--you"><span>От вас</span>Примеры документов как они есть, можно обезличенные. И ответ, можно ли выносить их за периметр</p>
+          <p class="stages__block stages__block--you"><span>От вас</span>Примеры документов как они есть, можно обезличенные. И ответ, можно ли выносить их за пределы компании</p>
           <p class="stages__block stages__block--out"><span>На выходе</span>Описание процесса и что автоматизировать первым</p>
         </li>
         <li class="stages__step">
           <span class="stages__dot" aria-hidden="true"></span>
           <span class="stages__num">02</span><h3>Согласование решения</h3>
-          <p class="stages__block"><span>Делаю</span>Предлагаю архитектуру, состав работ и критерии приёмки. Для интерфейсов рисую макет по брендбуку</p>
+          <p class="stages__block"><span>Делаю</span>Предлагаю схему решения, состав работ и критерии приёмки. Для интерфейсов рисую макет по брендбуку</p>
           <p class="stages__block stages__block--you"><span>От вас</span>Посмотреть и утвердить</p>
           <p class="stages__block stages__block--out"><span>На выходе</span>Утверждённое решение и критерии приёмки</p>
         </li>
@@ -430,9 +607,9 @@
           <span class="stages__gate" aria-hidden="true"></span>
           <span class="stages__gate-label">Старт — после согласования</span>
           <span class="stages__dot" aria-hidden="true"></span>
-          <span class="stages__num">03</span><h3>Пилот</h3>
+          <span class="stages__num">03</span><h3>Пробный запуск</h3>
           <p class="stages__block"><span>Делаю</span>Запускаю систему на одном узком участке</p>
-          <p class="stages__block stages__block--you"><span>От вас</span>Контрольные вопросы и отзывы сотрудников, которые пользуются пилотом</p>
+          <p class="stages__block stages__block--you"><span>От вас</span>Контрольные вопросы и отзывы сотрудников, которые работают с системой на пробном запуске</p>
           <p class="stages__block stages__block--out"><span>На выходе</span>Работающий участок и проверка по критериям</p>
         </li>
         <li class="stages__step">
@@ -440,23 +617,28 @@
           <span class="stages__gate-label">Решение: расширять или остановиться</span>
           <span class="stages__dot" aria-hidden="true"></span>
           <span class="stages__num">04</span><h3>Внедрение</h3>
-          <p class="stages__block"><span>Делаю</span>Расширяю на смежные процессы</p>
+          <p class="stages__block"><span>Делаю</span>Подключаю соседние участки работы</p>
           <p class="stages__block stages__block--you"><span>От вас</span>Доступы к системам, с которыми нужна связка</p>
-          <p class="stages__block stages__block--out"><span>На выходе</span>Система в работе на смежных процессах</p>
+          <p class="stages__block stages__block--out"><span>На выходе</span>Система работает и на соседних участках</p>
         </li>
         <li class="stages__step">
           <span class="stages__dot" aria-hidden="true"></span>
           <span class="stages__num">05</span><h3>Передача и сопровождение</h3>
           <p class="stages__block"><span>Делаю</span>Пишу документацию и регламент, чтобы система работала и без меня</p>
-          <p class="stages__block stages__block--you"><span>От вас</span>Ответственный за систему на вашей стороне</p>
+          <p class="stages__block stages__block--you"><span>От вас</span>Человек с вашей стороны, который отвечает за систему</p>
           <p class="stages__block stages__block--out"><span>На выходе</span>Документация, регламент, обученный ответственный</p>
         </li>
       </ol>
+      </div>
+      <ul class="terms" role="list">
+        <li>Цену и срок называю до начала. Меняются они, только если меняется задача, и с вашего согласия</li>
+        <li>Результат отдаю с инструкцией, чтобы вы могли разобраться без меня</li>
+      </ul>
     </section>
 
-    <section class="section" id="stack" aria-labelledby="stack-title">
-      <h2 id="stack-title">Как выбираю инструменты</h2>
-      <p class="section__lead">Сначала задача, потом инструмент. Ниже четыре правила, которыми я пользуюсь.</p>
+    <section class="section section--tech" id="tech" aria-labelledby="tech-title">
+      <h2 id="tech-title">Для ИТ-отдела: как выбираю инструменты</h2>
+      <p class="section__lead">Если задачу будет смотреть ваш ИТ-отдел. Сначала задача, потом инструмент. Ниже четыре правила, которыми я пользуюсь.</p>
       <div class="picks reveal">
         <div class="picks__legend" aria-hidden="true"><span>Если задача такая</span><span>Выбираю и почему</span></div>
         <dl class="picks__list">
@@ -465,14 +647,14 @@
           <div class="picks__row"><dt class="picks__when"><span class="mark mark--ring" aria-hidden="true"></span>Документы нельзя выносить за периметр</dt><dd class="picks__pick"><span class="mark mark--end" aria-hidden="true"></span><span class="picks__name">Локальная модель</span><span class="picks__why">Модель работает на вашем сервере, в сторонние сервисы ничего не уходит</span></dd></div>
           <div class="picks__row"><dt class="picks__when"><span class="mark mark--ring" aria-hidden="true"></span>Нужна проверяемая точность в цифрах</dt><dd class="picks__pick"><span class="mark mark--end" aria-hidden="true"></span><span class="picks__name">Правила + модель</span><span class="picks__why">Считают и сверяют правила. Модель разбирает только неоднозначное</span></dd></div>
         </dl>
-        <p class="picks__stack"><b>Рабочий стек</b>Python · FastAPI · PostgreSQL · pgvector · Qdrant · Redis · Ollama · Vue 3 · BPMN · UML · ArchiMate</p>
+        <p class="picks__stack"><b>Рабочий стек</b>Python · FastAPI · PostgreSQL · pgvector · Qdrant · Redis · Ollama · Vue 3 · RAG · ИИ-агенты · BPMN · UML · ArchiMate</p>
+        <p class="picks__stack"><b>Методология</b>Системный анализ и проектирование по ГОСТ 34, ISO/IEC/IEEE 15288 и 29148</p>
       </div>
     </section>
 
     <section class="section" id="faq" aria-labelledby="faq-title">
-      <h2 id="faq-title">Вопросы и границы</h2>
-      <!-- Вкладки собирает main.js (класс .js на <html>). Без скрипта и на узком экране
-           список скрыт, ответы идут подряд — текст всех пяти всегда в разметке. -->
+      <h2 id="faq-title">Что спрашивают перед началом</h2>
+      <p class="section__lead faq-hint">Выберите вопрос слева — ответ появится справа.</p>
       <div class="faq-tabs reveal">
         <div class="faq-tabs__list" role="tablist" aria-orientation="vertical" aria-label="Вопросы">
           <button class="faq-tabs__tab" type="button" role="tab" id="faq-t1" aria-controls="faq-p1" aria-selected="true"><span class="faq-tabs__ring" aria-hidden="true"></span><span class="faq-tabs__q">Что я получу по итогу?</span></button>
@@ -480,54 +662,62 @@
           <button class="faq-tabs__tab" type="button" role="tab" id="faq-t3" aria-controls="faq-p3" aria-selected="false" tabindex="-1"><span class="faq-tabs__ring" aria-hidden="true"></span><span class="faq-tabs__q">Как быстро будет готова система?</span></button>
           <button class="faq-tabs__tab" type="button" role="tab" id="faq-t4" aria-controls="faq-p4" aria-selected="false" tabindex="-1"><span class="faq-tabs__ring" aria-hidden="true"></span><span class="faq-tabs__q">Что если данных мало или они в плохом состоянии?</span></button>
           <button class="faq-tabs__tab" type="button" role="tab" id="faq-t5" aria-controls="faq-p5" aria-selected="false" tabindex="-1"><span class="faq-tabs__ring" aria-hidden="true"></span><span class="faq-tabs__q">Кому принадлежит код после сдачи?</span></button>
+          <button class="faq-tabs__tab" type="button" role="tab" id="faq-t6" aria-controls="faq-p6" aria-selected="false" tabindex="-1"><span class="faq-tabs__ring" aria-hidden="true"></span><span class="faq-tabs__q">Кто делает работу?</span></button>
         </div>
         <div class="faq-tabs__panels">
           <div class="faq-tabs__panel is-active" role="tabpanel" id="faq-p1" aria-labelledby="faq-t1" tabindex="0">
             <h3 class="faq-tabs__title">Что я получу по итогу?</h3>
-            <p class="faq-tabs__lead">Работающую систему, которой можно пользоваться без ограничения срока.</p>
+            <p class="faq-tabs__lead">Готовую систему, которой можно пользоваться без ограничения срока.</p>
             <div class="faq-tabs__body">
-              <ul class="dots" role="list"><li>Развёрнута на вашей инфраструктуре</li><li>Исходный код целиком</li><li>Документация и инструкция для пользователей</li><li>Обучение сотрудников</li><li>Гарантийная поддержка после сдачи — её срок фиксируется в договоре</li></ul>
+              <ul class="dots" role="list"><li>Установлена на вашем сервере или там, где записано в договоре</li><li>Исходный код целиком</li><li>Документация и инструкция для пользователей</li><li>Обучение сотрудников</li><li>Гарантийная поддержка после сдачи — её срок фиксируется в договоре</li></ul>
               <p>Дорабатывать и сопровождать систему можно своими силами или с моей помощью.</p>
             </div>
           </div>
           <div class="faq-tabs__panel" role="tabpanel" id="faq-p2" aria-labelledby="faq-t2" tabindex="0">
             <h3 class="faq-tabs__title">Что не входит в работу?</h3>
-            <p class="faq-tabs__lead">Инфраструктура, работы сверх утверждённого состава и экспертные выводы.</p>
+            <p class="faq-tabs__lead">Серверы, работы сверх согласованного и решения по существу дела.</p>
             <div class="faq-tabs__body">
               <ul class="dots" role="list">
                 <li>Аренда серверов и платные внешние сервисы — их вы оплачиваете напрямую поставщику</li>
-                <li>Интеграции с учётными системами (1С, SAP и другими) и всё, что выходит за утверждённый состав работ, — отдельным согласованным этапом</li>
+                <li>Связка с вашими учётными программами (1С, SAP и другими) и всё, чего нет в согласованном списке работ, — отдельным этапом</li>
                 <li>Администрирование ваших рабочих серверов и дежурство — за вашей ИТ-службой</li>
                 <li>Сопровождение после гарантийного срока — по отдельному договору с заранее названными границами</li>
-                <li>Экспертные выводы: система находит и сверяет, решение принимает ваш специалист</li>
+                <li>Решения по существу дела: система находит и сверяет, а решает ваш специалист</li>
               </ul>
             </div>
           </div>
           <div class="faq-tabs__panel" role="tabpanel" id="faq-p3" aria-labelledby="faq-t3" tabindex="0">
             <h3 class="faq-tabs__title">Как быстро будет готова система?</h3>
-            <p class="faq-tabs__lead">Срок называю после разбора задачи и фиксирую в договоре по каждому этапу.</p>
+            <p class="faq-tabs__lead">Срок называю после разбора задачи и записываю в договор по каждому этапу.</p>
             <div class="faq-tabs__body">
               <dl class="faq-terms">
                 <div><dt>Разбор одного типа документов или регулярный отчёт</dt><dd>от нескольких дней до двух недель</dd></div>
                 <div><dt>Система со сверкой или поиском и интерфейсом</dt><dd>от двух до четырёх месяцев</dd></div>
               </dl>
-              <p>Первый работающий результат вы увидите уже на пилоте. Сроки зависят и от того, насколько ваши специалисты доступны на первом этапе.</p>
+              <p>Первый работающий результат вы увидите уже на пробном запуске. Сроки зависят и от того, сколько времени ваши специалисты смогут уделить на первом этапе.</p>
             </div>
           </div>
           <div class="faq-tabs__panel" role="tabpanel" id="faq-p4" aria-labelledby="faq-t4" tabindex="0">
             <h3 class="faq-tabs__title">Что если данных мало или они в плохом состоянии?</h3>
-            <p class="faq-tabs__lead">Это выясняется до начала разработки — на ваших примерах.</p>
+            <p class="faq-tabs__lead">Это выясняется до начала разработки, на ваших примерах.</p>
             <div class="faq-tabs__body">
-              <p>Я смотрю примеры и прямо говорю, что из них получится. Точность словами не обещаю. Мы собираем контрольный набор документов, где ответы уже известны, и проверяем систему на нём. На чистых данных она не должна находить лишнего, а на проблемных — ничего пропускать.</p>
-              <div><h4 class="faq-tabs__sub">Конфиденциальность</h4><p>Примеры можно обезличить. Ваши данные, правила и описания процессов я не передаю третьим лицам и не использую в работе для других заказчиков; если в документах есть персональные данные — работа идёт по вашему поручению на их обработку.</p></div>
+              <p>Я смотрю примеры и прямо говорю, что из них получится. Точность на словах не обещаю. Мы собираем контрольный набор документов, где ответы уже известны, и проверяем систему на нём. На чистых данных она не должна находить лишнего, а на проблемных — ничего пропускать.</p>
+              <div><h4 class="faq-tabs__sub">Конфиденциальность</h4><p>Примеры можно обезличить. Ваши данные, правила и описания процессов я не передаю третьим лицам без вашего письменного согласия и не использую в работе для других заказчиков. Если в документах есть персональные данные, вы оформляете мне поручение на их обработку.</p></div>
             </div>
           </div>
           <div class="faq-tabs__panel" role="tabpanel" id="faq-p5" aria-labelledby="faq-t5" tabindex="0">
             <h3 class="faq-tabs__title">Кому принадлежит код после сдачи?</h3>
-            <p class="faq-tabs__lead">Всё, что сделано под вас, переходит вам после приёмки и оплаты.</p>
+            <p class="faq-tabs__lead">Права на всё, что сделано под вас, переходят вам после приёмки и оплаты. Это прямо записывается в договор.</p>
             <div class="faq-tabs__body">
-              <p>Это интеграции, правила, доработки интерфейса, документация. Если система строится на моей собственной платформе, созданной до договора, вы получаете бессрочное бесплатное право пользоваться ею в составе системы без ограничения числа пользователей.</p>
+              <p>Это интеграции, правила, доработки интерфейса, документация. Если система строится на моей собственной платформе, созданной до договора, вы получаете право пользоваться ею в составе системы на весь срок действия прав, без ограничения числа пользователей и без отдельной платы: оно входит в цену работ.</p>
               <p>Исходный код передаётся целиком, и вы вправе сами дорабатывать систему. Состав платформы и порядок перехода прав фиксируются в договоре.</p>
+            </div>
+          </div>
+          <div class="faq-tabs__panel" role="tabpanel" id="faq-p6" aria-labelledby="faq-t6" tabindex="0">
+            <h3 class="faq-tabs__title">Кто делает работу?</h3>
+            <p class="faq-tabs__lead">Я, Игорь Верещагин. Студия носит моё имя, отвечаю за результат я сам.</p>
+            <div class="faq-tabs__body">
+              <p>Больше 24&nbsp;лет разбираю, как устроена работа в компаниях, и делаю для неё программы. Руководил командами до 15&nbsp;человек. Сотрудников в штате у меня нет. Если для задачи нужен ещё специалист, скажу до начала и согласую с вами. Он работает на тех же условиях конфиденциальности, а с персональными данными — только в рамках вашего поручения.</p>
             </div>
           </div>
         </div>
@@ -568,9 +758,11 @@
     </section>
   </main>
 
+  <a class="mobile-cta button button--accent" href="#contact">Обсудить задачу</a>
+
   <footer class="site-footer">
     <div class="site-footer__inner">
-      <p class="site-footer__who"><img src="assets/icons/favicon.svg" width="24" height="24" alt=""><span><span class="site-footer__name">Игорь Верещагин</span> · системный аналитик · базы данных и автоматизация</span></p>
+      <p class="site-footer__who"><img src="assets/icons/logo.svg" width="232" height="36" alt="Верещагин Игорь, студия искусственного интеллекта"><span>Документы, отчёты и данные</span></p>
       <p class="site-footer__links"><a href="mailto:vereschagin.it@gmail.com">vereschagin.it@gmail.com</a><a href="#hero">Наверх ↑</a><span>© 2026</span></p>
     </div>
   </footer>

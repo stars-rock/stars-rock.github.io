@@ -39,7 +39,12 @@ h1, h2, h3 {
   letter-spacing: var(--tracking-tight);
   margin: 0 0 var(--space-3);
 }
+/* Без одиноких слов на последней строке: заголовки ровняются, абзацы не оставляют висячих */
+h1, h2, h3, h4 { text-wrap: balance; }
+p, li, dd { text-wrap: pretty; }
 
+/* Крупные заголовки — обычное начертание: PT Serif 700 на 40–60 px тяжелит страницу (20.10.2026) */
+h1, h2 { font-weight: 400; }
 h1 { font-size: var(--size-h1); }
 h2 { font-size: var(--size-h2); }
 h3 { font-size: var(--size-h4); }
@@ -76,13 +81,14 @@ a { color: var(--color-accent); text-underline-offset: 0.2em; }
 }
 .skip-link:focus-visible { inset-block-start: var(--space-2); }
 
+/* Все разделы — той же ширины, что первый экран: от края окна на --edge, без контейнера
+   1248px. На широком мониторе разделы в контейнере выглядели уже первого экрана
+   (замечание владельца 21.10.2026). Длину строк держит --measure у абзацев. */
 .section {
-  max-width: var(--container);
-  margin-inline: auto;
-  padding: var(--space-12) var(--gutter);
+  padding: var(--space-12) var(--edge);
 }
 
-/* Шапка появляется только после первого скролла (main.js снимает [hidden]) */
+/* Шапка видна сразу: на первом экране это единственное место логотипа (20.10.2026) */
 .site-header {
   position: sticky;
   inset-block-start: 0;
@@ -96,14 +102,19 @@ a { color: var(--color-accent); text-underline-offset: 0.2em; }
   align-items: center;
   gap: var(--space-4);
 }
-.site-header__mark {
-  font-family: var(--font-display);
-  font-size: var(--size-lead);
+/* Логотип (assets/icons/logo.svg, собирает design/logo.py) — ссылка в начало.
+   Слева логотип, справа меню и кнопка — схема 1, выбрана 20.10.2026. */
+.site-header__logo {
+  display: inline-flex;
+  align-items: center;
+  flex: none;
+  min-height: var(--tap-min);
 }
+.site-header__logo img { display: block; height: var(--space-6); width: auto; }
 .site-header__nav {
   display: flex;
   gap: var(--space-3);
-  margin-inline-end: auto;
+  margin-inline-start: auto;
 }
 .site-header__nav a {
   color: var(--color-text-muted);
@@ -153,30 +164,9 @@ a { color: var(--color-accent); text-underline-offset: 0.2em; }
 
 .hero__content { position: relative; z-index: 1; grid-column: 1 / 8; }
 
-.hero__eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
-  background: var(--color-surface);
-  border: 1px solid var(--color-accent);
-  color: var(--color-accent);
-  font-size: var(--size-body);
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  padding: var(--space-2) var(--space-4);
-  border-radius: var(--radius-sm);
-  margin: 0 0 var(--space-4);
-}
-.hero__eyebrow::before {
-  content: "";
-  flex: none;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--color-accent);
-}
-
 .hero__title { font-size: var(--size-hero-fluid); overflow-wrap: break-word; text-wrap: balance; }
+/* Каждое предложение — с новой строки: иначе «Это» повисало в конце строки с вопросом (21.10.2026) */
+.hero__title > span { display: block; text-wrap: balance; }
 
 .hero__lead { max-width: 44ch; color: var(--color-text-muted); font-size: var(--size-lead); margin-bottom: var(--space-4); }
 
@@ -211,7 +201,7 @@ a { color: var(--color-accent); text-underline-offset: 0.2em; }
 .hero__facts strong { font-weight: 600; }
 .hero__facts span { font-size: var(--size-caption); color: var(--color-text-muted); line-height: 1.5; }
 
-.section__lead { max-width: var(--measure); margin: calc(var(--space-1) * -1) 0 var(--space-6); color: var(--color-text-muted); font-size: var(--size-lead); }
+.section__lead { max-width: var(--measure); margin: calc(var(--space-1) * -1) 0 var(--space-4); color: var(--color-text-muted); font-size: var(--size-lead); }
 
 /* «Условный пример» — общая метка для иллюстраций, не выдающих себя за реальные данные */
 .chip {
@@ -264,47 +254,80 @@ a { color: var(--color-accent); text-underline-offset: 0.2em; }
 /* Кромка второго блока: только заголовок виден на старте, остальное — после скролла */
 #problems { min-height: 40vh; }
 
-/* С чем приходят: крупные цифры антиквой + линия-стержень — продолжает
-   PT Serif из первого экрана, а не вводит новый приём (кольцо там уже занято
-   узлами "найдено/не найдено" в схеме поиска). */
-.problems {
+/* С чем приходят: «Боль в цифрах» (вариант A, выбран 21.10.2026; этап 3а плана, п. 1) —
+   три цифры с источником в панели со свечением, под ней четыре боли сеткой 2×2.
+   Цифры — только подтверждённые первоисточником (НАФИ и Яндекс 360, 2025). */
+.stats {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-4);
-  max-width: 56rem;
-  padding-inline-start: var(--space-4);
-  margin: 0;
-  list-style: none;
+  margin: 0 0 var(--space-4);
+  padding: var(--space-4) var(--space-6);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
 }
-.problems::before {
+.stats::before {
   content: "";
   position: absolute;
-  inset-block: 6px;
-  inset-inline-start: 0;
-  width: 1px;
-  background: var(--color-border);
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse 50% 70% at 15% 20%, color-mix(in srgb, var(--color-accent) 12%, transparent), transparent 70%);
+}
+.stats > * { position: relative; }
+.stats__list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.stats__list li { display: flex; flex-direction: column; gap: var(--space-1); }
+.stats__value {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: var(--size-hero);
+  line-height: 1;
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-accent);
+}
+.stats__list span { max-width: 30ch; color: var(--color-text-muted); }
+.stats__source { margin: var(--space-3) 0 0; font-size: var(--size-caption); color: var(--color-text-muted); }
+
+.problems {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-3) var(--space-6);
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 .problems__row {
-  display: flex;
-  align-items: flex-start;
-  gap: var(--space-4);
+  display: grid;
+  grid-template-columns: var(--space-6) minmax(0, 1fr);
+  column-gap: var(--space-2);
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--color-border);
 }
 .problems__num {
   font-family: var(--font-display);
-  font-size: var(--size-hero);
-  font-weight: 700;
+  font-size: var(--size-h3);
+  font-weight: 400;
   line-height: 1;
   color: var(--color-accent);
-  opacity: 0.5; /* 3.36:1 к фону — проходит порог 3:1 для крупного текста (WCAG 1.4.3) */
-  flex: 0 0 5rem;
+  opacity: 0.6; /* 4.3:1 к фону — выше порога 3:1 для крупного текста (WCAG 1.4.3) */
   font-variant-numeric: tabular-nums;
 }
-.problems__body { display: flex; flex-direction: column; gap: var(--space-2); padding-top: var(--space-1); }
-.problems__pain { margin: 0; font-size: var(--size-lead); }
-.problems__change { margin: 0; color: var(--color-text-muted); }
-.problems__change a { white-space: nowrap; }
-.problems__label,
+.problems__body { display: flex; flex-direction: column; gap: var(--space-1); }
+.problems__pain { margin: 0; font-family: var(--font-display); font-size: var(--size-lead); line-height: 1.35; }
+.problems__change { margin: 0; font-size: var(--size-caption); line-height: 1.55; color: var(--color-text-muted); }
+.problems__change::before { content: "→"; margin-inline-end: 6px; color: var(--color-accent); }
+@media (min-width: 360px) { .problems__change a { white-space: nowrap; } }
+
+@media (max-width: 1023px) {
+  .stats { padding: var(--space-4); }
+  .problems { grid-template-columns: 1fr; }
+}
 .case__label {
   display: block;
   margin: 0 0 4px;
@@ -361,21 +384,293 @@ a { color: var(--color-accent); text-underline-offset: 0.2em; }
   .bento__item--narrow { grid-column: 1 / -1; }
 }
 
+/* Ссылка на источник цифры — мелко и спокойно, но видно, откуда цифра */
+.source {
+  color: var(--color-text-muted);
+  font-size: var(--size-caption);
+  text-decoration: underline;
+  text-decoration-color: var(--color-border);
+  white-space: nowrap;
+}
+.source:hover { color: var(--color-text); text-decoration-color: var(--color-accent); }
+
+/* Задача — срок — цена. Три карточки разного содержания в одной сетке; цена —
+   крупно антиквой янтарём, как итоговая цифра в «Как это выглядит». */
+.offers {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.offer {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-4);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+.offer__title { margin: 0 0 var(--space-2); font-size: var(--size-h4); line-height: 1.2; }
+.offer__what { margin: 0 0 var(--space-3); color: var(--color-text-muted); }
+.offer__terms { display: grid; gap: var(--space-1); margin: 0 0 var(--space-3); font-size: var(--size-caption); }
+.offer__terms div { display: grid; grid-template-columns: 4rem 1fr; gap: var(--space-2); }
+.offer__terms dt { color: var(--color-accent); }
+.offer__terms dd { margin: 0; }
+.offer__price {
+  margin: auto 0 0;
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--color-border);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--size-h3);
+  line-height: 1.1;
+  color: var(--color-accent);
+  font-variant-numeric: tabular-nums;
+}
+.offers__note { margin: var(--space-3) 0 0; font-size: var(--size-caption); color: var(--color-text-muted); }
+
+/* Условный расчёт окупаемости: три колонки «без системы → с системой → экономия» */
+.payback {
+  margin: var(--space-3) 0 0;
+  padding: var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+.payback__title { margin: 0 0 var(--space-3); font-size: var(--size-h4); line-height: 1.2; }
+.payback__cols {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.payback__cols li { display: flex; flex-direction: column; gap: var(--space-1); }
+.payback__cols p { margin: 0; }
+.payback__label { font-size: var(--size-caption); color: var(--color-accent); }
+.payback__value {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: var(--size-h3);
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+}
+.payback__result .payback__value { color: var(--color-accent); }
+.payback__text { max-width: 30ch; font-size: var(--size-caption); color: var(--color-text-muted); }
+.payback__source { margin: var(--space-3) 0 0; font-size: var(--size-caption); color: var(--color-text-muted); }
+
+/* Аналитика: четыре шага в одной панели — тот же язык, что «Условный расчёт» и ответы
+   в «Что спрашивают перед началом»: номер, заголовок, что делаю, что получаете под линией */
+.study {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-4);
+  margin: 0;
+  padding: var(--space-4);
+  list-style: none;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+/* subgrid: линии «Вы получаете» во всех колонках на одной высоте, как в «Как строится работа» */
+.study { grid-template-rows: repeat(4, auto); row-gap: 0; }
+.study__step { display: grid; grid-row: span 4; grid-template-rows: subgrid; align-content: start; }
+.study__num {
+  font-family: var(--font-display);
+  font-size: var(--size-h3);
+  line-height: 1;
+  color: var(--color-accent);
+  font-variant-numeric: tabular-nums;
+}
+.study__title { margin: var(--space-2) 0 var(--space-1); font-size: var(--size-h4); line-height: 1.2; }
+.study__what { margin: 0 0 var(--space-3); font-size: var(--size-caption); line-height: 1.55; color: var(--color-text-muted); }
+.study__out {
+  align-self: start;
+  margin: 0;
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--color-border);
+  font-size: var(--size-caption);
+  line-height: 1.55;
+}
+.study__out span { display: block; color: var(--color-accent); }
+@media (max-width: 1023px) {
+  .study { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: none; row-gap: var(--space-4); }
+  .study__step { display: flex; flex-direction: column; grid-row: auto; }
+  .study__out { margin-top: auto; }
+}
+@media (max-width: 767px) {
+  .study { grid-template-columns: 1fr; padding: var(--space-3); }
+}
+.analytics__team { margin: var(--space-4) 0 0; }
+.analytics__where { margin: var(--space-6) 0 var(--space-3); font-size: var(--size-h4); line-height: 1.2; }
+
+@media (max-width: 1023px) {
+  .offers { grid-template-columns: 1fr; }
+  .payback__cols { grid-template-columns: 1fr; gap: var(--space-3); }
+}
+
+/* Телефон: страница короче — номера болей над текстом, вопросы по одному,
+   декоративная схема первого экрана не показывается */
+@media (max-width: 767px) {
+  .stats__list { grid-template-columns: 1fr; gap: var(--space-3); }
+  .stats__value { font-size: var(--size-h1); }
+  .problems__row { grid-template-columns: 1fr; row-gap: var(--space-1); }
+  .hero__schema { display: none; }
+  .js .faq-tabs__list { display: grid; gap: var(--space-1); margin-bottom: var(--space-2); }
+  .js .faq-tabs__panel:not(.is-active) { display: none; }
+  .js .faq-tabs__title { display: none; }
+}
+
+/* Безопасность: «Контур компании» (вариант A, выбран 21.10.2026) — схема зон в SVG: крупная
+   зона «Ваша компания» с полем точек, как на первом экране, рядом «Моё оборудование» и облако
+   пунктиром, на границе — замена имён метками. Панель со свечением, как у остальных крупных
+   панелей. Уже 1024 подписи в SVG мельче 11 px — схему заменяет список шагов .dataflow__flow.
+   Содержимое раздела (от заголовка до низа панели) помещается под шапкой в экран
+   1440×900 после перехода по меню (замечание владельца 20.10.2026). */
+.dataflow {
+  position: relative;
+  margin: 0;
+  padding: var(--space-3) var(--space-6);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+.dataflow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse 45% 70% at 25% 40%, color-mix(in srgb, var(--color-accent) 12%, transparent), transparent 70%);
+}
+.dataflow > * { position: relative; }
+.dataflow__art { display: block; width: 100%; height: auto; }
+.dataflow__art text { font-family: var(--font-text); fill: var(--color-text-muted); font-size: 14px; }
+.dataflow__zone { fill: color-mix(in srgb, var(--color-bg) 70%, transparent); stroke: var(--color-border); }
+.dataflow__zone--main {
+  fill: color-mix(in srgb, var(--color-accent) 4%, var(--color-bg));
+  stroke: color-mix(in srgb, var(--color-accent) 55%, transparent);
+}
+.dataflow__zone--ext { stroke-dasharray: 6 6; }
+.dataflow__art .dataflow__eyebrow { fill: var(--color-accent); font-size: 13px; letter-spacing: 0.08em; }
+.dataflow__art .dataflow__big { fill: var(--color-text); font-family: var(--font-display); font-size: 28px; }
+.dataflow__art .dataflow__strong { fill: var(--color-text); font-weight: 600; font-size: 16px; }
+.dataflow__art .dataflow__note { fill: var(--color-text); }
+.dataflow__docs circle,
+.dataflow__dot { fill: var(--color-accent); }
+.dataflow__ring { fill: var(--color-surface); stroke: var(--color-accent); stroke-width: 1.75; }
+.dataflow__line { stroke: var(--color-border); stroke-width: 1.5; }
+.dataflow__line--ext { stroke-dasharray: 6 6; }
+.dataflow__flow {
+  display: none;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.dataflow__step { position: relative; display: flex; flex-direction: column; padding-top: var(--space-4); }
+.dataflow__mark { position: absolute; top: 0; left: 0; width: 14px; height: 14px; border-radius: 50%; }
+.dataflow__mark--ring,
+.dataflow__mark--end { border: 1.75px solid var(--color-accent); }
+.dataflow__mark--dot { background: var(--color-accent); transform: scale(0.8); }
+.dataflow__mark--end::after { content: ""; position: absolute; inset: 3px; border-radius: 50%; background: var(--color-accent); }
+.dataflow__step:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 7px;
+  left: 22px;
+  right: calc(var(--space-1) - var(--space-4));
+  border-top: 1px solid var(--color-border);
+}
+/* К облаку линия пунктиром — передача только с согласия */
+.dataflow__step:nth-child(2)::after { border-top-style: dashed; }
+.dataflow__label {
+  display: block;
+  margin: 0 0 var(--space-2);
+  font-size: var(--size-caption);
+  color: var(--color-text-muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.dataflow__box {
+  flex: 1;
+  padding: var(--space-3);
+  background: color-mix(in srgb, var(--color-bg) 70%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-border) 55%, transparent);
+  border-radius: var(--radius-sm);
+}
+.dataflow__step--ext .dataflow__box { border: 1px dashed var(--color-border); }
+.dataflow__box strong { display: block; margin: 0 0 var(--space-1); font-weight: 600; }
+.dataflow__box p { margin: 0; font-size: var(--size-caption); line-height: 1.55; color: var(--color-text-muted); }
+.dataflow__notes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-4);
+  /* space-2, а не space-3: с подписью 15px «Безопасность» иначе на 3px не входит в экран 1440×900 */
+  margin: var(--space-2) 0 0;
+  padding: 0;
+  list-style: none;
+}
+.dataflow__notes li { padding-top: var(--space-2); border-top: 1px solid var(--color-border); }
+.dataflow__notes strong { display: block; margin: 0 0 4px; font-weight: 600; }
+.dataflow__notes span { font-size: var(--size-caption); color: var(--color-text-muted); line-height: 1.55; }
+
+/* Уже 1024: шаги в столбик, связующая линия — вертикальная слева */
+@media (max-width: 1023px) {
+  .dataflow { padding: var(--space-4); }
+  .dataflow__art { display: none; }
+  .dataflow__flow { display: grid; }
+  .dataflow__flow,
+  .dataflow__notes { grid-template-columns: 1fr; gap: var(--space-3); }
+  .dataflow__step { padding-top: 0; padding-left: var(--space-4); }
+  .dataflow__step:not(:last-child)::after {
+    top: 22px;
+    left: 7px;
+    right: auto;
+    bottom: calc(var(--space-1) - var(--space-3));
+    border-top: 0;
+    border-left: 1px solid var(--color-border);
+  }
+  .dataflow__step:nth-child(2)::after { border-left-style: dashed; }
+  .dataflow__label { line-height: 14px; }
+}
+@media (max-width: 479px) {
+  .dataflow { padding: var(--space-3) var(--space-2); }
+}
+
+/* Техническая часть отделена от бизнес-части линиями и подписью. С 21.10.2026 она стоит
+   перед «Что спрашивают перед началом», чтобы перед «Контактом» был человеческий раздел —
+   поэтому линия и снизу. */
+.section--tech { border-block: 1px solid var(--color-border); }
+.picks__stack + .picks__stack { border-top: 0; padding-top: var(--space-1); }
+
 /* Кейсы: флагманский кейс — панель с рамкой и свечением (тот же язык, что
-   в первом экране), остальные четыре — раскрытие по клику (details/summary),
-   без аккордеонной "гармошки на всю ширину" — два столбца. */
+   в первом экране), остальные четыре — карточки.
+   Содержимое раздела помещается под шапкой в экран 1440×900 после перехода по меню —
+   запас 3 px, добавляя текст, перемерить (замечание владельца 20.10.2026). Флагман —
+   три колонки «суть | шаги | пример», под ним три карточки в ряд. Кейсы консалтинга
+   (агропром, транспорт) — в «Аналитике», блок «Где делал» (решение 21.10.2026). */
 .cases {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-3);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-4);
   list-style: none;
   margin: 0;
   padding: 0;
 }
+/* «Где делал» в «Аналитике»: два кейса консалтинга в две колонки */
+.cases--pair { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .case-featured {
   grid-column: 1 / -1;
   position: relative;
-  padding: var(--space-6);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+  gap: var(--space-4);
+  align-items: start;
+  padding: var(--space-3) var(--space-4);
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
@@ -389,28 +684,21 @@ a { color: var(--color-accent); text-underline-offset: 0.2em; }
 }
 .case-featured > * { position: relative; }
 .case-featured__kicker { margin: 0 0 var(--space-2); font-size: var(--size-caption); color: var(--color-accent); letter-spacing: 0.04em; }
-.case-featured h3 { font-size: var(--size-h2); margin: 0 0 var(--space-2); }
-.case-featured__problem { color: var(--color-text-muted); font-size: var(--size-lead); margin: 0 0 var(--space-6); }
-
-.case-featured__grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
-  gap: var(--space-6);
-  align-items: start;
-}
+.case-featured h3 { font-size: var(--size-h4); font-weight: 400; margin: 0 0 var(--space-1); }
+.case-featured__problem { color: var(--color-text-muted); margin: 0 0 var(--space-3); }
 
 /* Главный сигнал уровня в кейсе — не список фич, а инженерное решение */
 .case-decision {
-  margin: 0 0 var(--space-4);
+  margin: 0 0 var(--space-3);
   padding-inline-start: var(--space-3);
   border-inline-start: 2px solid var(--color-accent);
 }
-.case-decision p { margin: 0; font-family: var(--font-display); font-size: var(--size-h4); line-height: 1.35; }
+.case-decision p { margin: 0; font-family: var(--font-display); font-size: var(--size-body); line-height: 1.5; }
 
 .case-flow {
   counter-reset: flow;
   display: grid;
-  gap: var(--space-2);
+  gap: var(--space-1);
   margin: 0;
   padding: 0;
   list-style: none;
@@ -434,7 +722,7 @@ a { color: var(--color-accent); text-underline-offset: 0.2em; }
 
 .case-report {
   margin: 0;
-  padding: var(--space-3);
+  padding: var(--space-2) var(--space-3);
   background: color-mix(in srgb, var(--color-bg) 70%, transparent);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
@@ -444,7 +732,7 @@ a { color: var(--color-accent); text-underline-offset: 0.2em; }
   flex-wrap: wrap;
   align-items: center;
   gap: var(--space-2);
-  margin: 0 0 var(--space-3);
+  margin: 0 0 var(--space-1);
   font-size: var(--size-caption);
   color: var(--color-text-muted);
 }
@@ -453,7 +741,7 @@ a { color: var(--color-accent); text-underline-offset: 0.2em; }
   display: flex;
   justify-content: space-between;
   gap: var(--space-2);
-  padding-block: var(--space-1);
+  padding-block: 4px;
   border-bottom: 1px solid color-mix(in srgb, var(--color-border) 50%, transparent);
 }
 .case-report__rows dt { color: var(--color-text-muted); }
@@ -461,54 +749,35 @@ a { color: var(--color-accent); text-underline-offset: 0.2em; }
 .case-report__diff { border-bottom: 0; }
 .case-report__diff dt,
 .case-report__diff dd { color: var(--color-accent); font-weight: 600; }
-.case-report__why { margin: var(--space-2) 0 0; font-size: var(--size-caption); line-height: 1.6; }
+.case-report__why { margin: var(--space-2) 0 0; font-size: var(--size-caption); line-height: 1.5; }
 
-.case-featured__foot {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-2);
-  margin-top: var(--space-6);
-  padding-top: var(--space-3);
-  border-top: 1px solid var(--color-border);
-}
-.case-featured__foot .case__tags { margin: 0; }
 .case-featured__status { margin: 0; font-size: var(--size-caption); color: var(--color-text-muted); }
 
-/* Кейсы 02–05 — карточки, как крупные плитки «Услуг»; номер продолжает флагманский 01 */
+/* Кейсы 02–04 и «Где делал» — без рамки, линия сверху, как пояснения в «Как это выглядит»;
+   номер продолжает флагманский 01 */
 .case-card {
   display: flex;
   flex-direction: column;
-  padding: var(--space-4);
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--color-border);
 }
-.case-card__head { display: flex; align-items: baseline; gap: var(--space-2); margin: 0 0 var(--space-2); }
+.case-card__head { display: flex; align-items: baseline; gap: var(--space-1); margin: 0 0 var(--space-1); }
 .case-card__num {
   font-family: var(--font-display);
-  font-weight: 700;
-  font-size: var(--size-h3);
+  font-weight: 400;
+  font-size: var(--size-h4);
   line-height: 1;
   color: var(--color-accent);
   opacity: 0.6;
   font-variant-numeric: tabular-nums;
 }
-.case-card h3 { margin: 0; font-size: var(--size-lead); line-height: 1.3; }
-.case-card__problem { margin: 0 0 var(--space-3); }
-.case-card .dots { color: var(--color-text-muted); font-size: var(--size-caption); line-height: 1.55; }
-.case-card__stack { margin: auto 0 0; padding-top: var(--space-3); font-size: var(--size-caption); color: var(--color-text-muted); }
-.case-card__stack::before {
-  content: "";
-  display: block;
-  height: 1px;
-  margin-bottom: var(--space-2);
-  background: color-mix(in srgb, var(--color-border) 60%, transparent);
-}
-
-.case__tags { display: flex; flex-wrap: wrap; gap: var(--space-1); margin-top: var(--space-3); }
-.case__tag { font-size: var(--size-caption); border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 4px var(--space-1); }
+.case-card h3,
+.case-card h4 { margin: 0; font-size: var(--size-body); font-family: var(--font-text); font-weight: 600; letter-spacing: 0; line-height: 1.35; }
+.case-card__problem { margin: 0 0 var(--space-1); font-size: var(--size-caption); line-height: 1.55; }
+.case-card .dots { gap: 4px; color: var(--color-text-muted); font-size: var(--size-caption); line-height: 1.45; }
+/* Якоря кейсов (#case-…) стоят без отступа секции — без запаса их верх уходил бы
+   под липкую шапку (до 110 px на 768–1023) */
+.cases > li[id] { scroll-margin-top: calc(var(--space-12) + var(--space-3)); }
 
 /* Метки языка сайта: точка — «найдено/сделано», пустое кольцо — запрос,
    кольцо с точкой — ответ. Те же, что на первом экране и в «Как устроено внутри». */
@@ -530,12 +799,15 @@ a { color: var(--color-accent); text-underline-offset: 0.2em; }
 .mark--dot { background: var(--color-accent); transform: scale(0.8); }
 .mark--end::after { content: ""; position: absolute; inset: 3px; border-radius: 50%; background: var(--color-accent); }
 
-@media (max-width: 1023px) {
-  .case-featured__grid { grid-template-columns: 1fr; }
+@media (max-width: 1279px) {
+  .cases { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .case-featured { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .case-featured__intro { grid-column: 1 / -1; }
 }
 @media (max-width: 767px) {
-  .cases { grid-template-columns: 1fr; }
-  .case-featured { padding: var(--space-4) var(--space-3); }
+  .cases,
+  .case-featured { grid-template-columns: 1fr; }
+  .case-featured { gap: var(--space-4); padding: var(--space-4) var(--space-3); }
 }
 
 /* Как устроено внутри: один запрос насквозь. Метки — те же, что на первом
@@ -707,11 +979,17 @@ a { color: var(--color-accent); text-underline-offset: 0.2em; }
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-1) var(--space-4);
-  /* Сверху ближе к вводному абзацу, снизу — запас под подписи ромбов (они растут вверх от
-     линии на ~3 строки): список не липнет к таймлайну. */
-  margin: calc(var(--space-2) * -1) 0 var(--space-12);
+  margin: var(--space-3) 0 0;
   padding: 0;
   list-style: none;
+}
+/* Этапы в панели, как остальные разделы. Сверху запас под подписи ромбов: они растут
+   вверх от линии на ~3 строки. */
+.stages-panel {
+  padding: var(--space-12) var(--space-4) var(--space-4);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
 }
 .terms li { display: flex; align-items: center; gap: var(--space-1); }
 .terms li::before { content: ""; flex: none; width: 6px; height: 6px; border-radius: 50%; background: var(--color-accent); }
@@ -760,7 +1038,7 @@ a { color: var(--color-accent); text-underline-offset: 0.2em; }
   left: calc(var(--space-2) * -1);
   width: 20px;
   height: 20px;
-  background: var(--color-bg);
+  background: var(--color-surface);
   border: 2px solid var(--color-accent);
   transform: translateX(-50%) rotate(45deg);
 }
@@ -780,25 +1058,21 @@ a { color: var(--color-accent); text-underline-offset: 0.2em; }
 .stages__num { display: block; font-size: var(--size-caption); color: var(--color-accent); font-variant-numeric: tabular-nums; }
 .stages__step h3 { margin: 0 0 var(--space-2); font-size: var(--size-lead); }
 .stages__block { margin: 0 0 var(--space-2); font-size: var(--size-caption); line-height: 1.55; }
-.stages__block span {
-  display: block;
-  margin: 0 0 2px;
-  color: var(--color-text-muted);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-.stages__block--you { padding: var(--space-1) var(--space-2); border-left: 2px solid var(--color-border); }
+/* Подписи — как «На выходе» и «Кейс» в «Что ещё делаю»: латунь, обычный регистр */
+.stages__block { color: var(--color-text-muted); }
+.stages__block span { display: block; margin: 0 0 2px; color: var(--color-accent); }
 .stages__block--out {
+  color: var(--color-text);
   align-self: start;
   margin: 0;
   padding-top: var(--space-2);
   border-top: 1px solid var(--color-border);
   font-size: var(--size-body);
 }
-.stages__block--out span { color: var(--color-accent); font-size: var(--size-caption); }
+.stages__block--out span { font-size: var(--size-caption); }
 
 @media (max-width: 1023px) {
-  .terms { margin-bottom: var(--space-4); }
+  .stages-panel { padding: var(--space-4) var(--space-3); }
   .stages { grid-template-columns: 1fr; grid-template-rows: none; row-gap: var(--space-4); padding-left: var(--space-4); }
   .stages::before { bottom: 0; right: auto; width: 1px; height: auto; }
   .stages__step { display: flex; flex-direction: column; grid-row: auto; padding-top: 0; }
@@ -889,10 +1163,12 @@ a { color: var(--color-accent); text-underline-offset: 0.2em; }
   .hero__facts { grid-template-columns: 1fr; gap: var(--space-2); }
 }
 
-/* Вопросы и границы. По умолчанию (без JS, узкий экран) — все ответы подряд
+/* Что спрашивают перед началом. По умолчанию (без JS, узкий экран) — все ответы подряд
    карточками. С JS от 768px — вкладки: вопросы слева, ответ в панели справа
    (WAI-ARIA tabs, main.js). Скрытые панели остаются в разметке. */
 .faq-tabs__list { display: none; }
+/* Подсказка нужна только во вкладках; без JS и на телефоне ответы и так открыты */
+.faq-hint { display: none; }
 .faq-tabs__panels { display: grid; gap: var(--space-2); }
 .faq-tabs__panel {
   padding: var(--space-4);
@@ -937,27 +1213,42 @@ a { color: var(--color-accent); text-underline-offset: 0.2em; }
 .faq-terms dd { margin: 0; color: var(--color-accent); font-weight: 600; }
 .faq-note { margin: var(--space-3) 0 0; font-size: var(--size-caption); color: var(--color-text-muted); }
 
+/* Каждый вопрос — кнопка с рамкой и стрелкой к панели ответа: видно, что на него нажимают.
+   Выбранный — фон панели, латунная рамка и латунная стрелка. */
 .faq-tabs__tab {
   display: grid;
-  grid-template-columns: var(--space-4) 1fr;
+  grid-template-columns: var(--space-4) 1fr auto;
   align-items: center;
+  gap: var(--space-1);
   width: 100%;
   min-height: var(--tap-min);
   padding: var(--space-2);
   background: none;
-  border: 1px solid transparent;
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
   color: var(--color-text-muted);
   font: inherit;
   text-align: left;
   cursor: pointer;
+  transition: background-color var(--dur-hover) var(--ease-out), border-color var(--dur-hover) var(--ease-out), color var(--dur-hover) var(--ease-out);
 }
-.faq-tabs__tab:hover { color: var(--color-text); }
+.faq-tabs__tab::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  margin-inline-end: 4px;
+  border-top: 1.75px solid currentColor;
+  border-right: 1.75px solid currentColor;
+  transform: rotate(45deg);
+  opacity: 0.6;
+}
+.faq-tabs__tab:hover { color: var(--color-text); background: var(--color-surface); }
 .faq-tabs__tab[aria-selected="true"] {
   color: var(--color-text);
   background: var(--color-surface);
-  border-color: var(--color-border);
+  border-color: color-mix(in srgb, var(--color-accent) 60%, var(--color-border));
 }
+.faq-tabs__tab[aria-selected="true"]::after { border-color: var(--color-accent); opacity: 1; }
 .faq-tabs__q { font-family: var(--font-display); font-size: var(--size-lead); line-height: 1.3; }
 .faq-tabs__ring {
   position: relative;
@@ -984,6 +1275,7 @@ a { color: var(--color-accent); text-underline-offset: 0.2em; }
     align-items: start;
   }
   .js .faq-tabs__list { display: grid; gap: var(--space-1); }
+  .js .faq-hint { display: block; }
   .js .faq-tabs__panels { gap: 0; }
   /* Все панели в одной ячейке: высота — по самой длинной, переключение без скачка */
   .js .faq-tabs__panel {
@@ -1045,7 +1337,7 @@ a { color: var(--color-accent); text-underline-offset: 0.2em; }
   margin: 0 0 var(--space-2);
   max-width: none;
   font-family: var(--font-display);
-  font-weight: 700;
+  font-weight: 400;
   font-size: var(--size-h2);
   line-height: 1.15;
   letter-spacing: var(--tracking-tight);
@@ -1123,9 +1415,7 @@ a { color: var(--color-accent); text-underline-offset: 0.2em; }
 
 .site-footer { border-top: 1px solid color-mix(in srgb, var(--color-border) 60%, transparent); }
 .site-footer__inner {
-  max-width: var(--container);
-  margin-inline: auto;
-  padding: var(--space-6) var(--gutter);
+  padding: var(--space-6) var(--edge);
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -1137,7 +1427,7 @@ a { color: var(--color-accent); text-underline-offset: 0.2em; }
 .site-footer__who,
 .site-footer__links { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); margin: 0; max-width: none; }
 .site-footer__links { gap: var(--space-3); }
-.site-footer__name { font-family: var(--font-display); font-size: var(--size-body); color: var(--color-text); }
+.site-footer__who img { display: block; height: 36px; width: auto; }
 .site-footer a { color: var(--color-text-muted); text-decoration: none; }
 .site-footer a:hover { color: var(--color-text); }
 
@@ -1153,13 +1443,6 @@ a { color: var(--color-accent); text-underline-offset: 0.2em; }
 .page-404__ring { margin-bottom: var(--space-3); }
 .page-404__ring-circle { fill: none; stroke: var(--color-border); stroke-width: 1.75; }
 .page-404__ring-line { stroke: var(--color-border); stroke-width: 1.75; }
-.page-404__eyebrow {
-  margin: 0 0 var(--space-1);
-  font-size: var(--size-caption);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-}
 .page-404__lead {
   color: var(--color-text-muted);
   max-width: 44ch;
@@ -1194,9 +1477,7 @@ a { color: var(--color-accent); text-underline-offset: 0.2em; }
   transition: transform var(--dur-hover) var(--ease-out),
               box-shadow var(--dur-hover) var(--ease-out);
 }
-.button--accent:hover {
-  box-shadow: 0 12px 28px -8px color-mix(in srgb, var(--color-accent) 55%, transparent);
-}
+/* Без янтарного свечения при наведении: кнопка поднимается, как обычная */
 
 /* Появление при скролле: один раз, только transform и opacity */
 .reveal {
@@ -1228,6 +1509,12 @@ a { color: var(--color-accent); text-underline-offset: 0.2em; }
   .hero__content,
   .hero__schema { grid-column: 1 / -1; }
   .hero__schema { max-width: 26rem; margin-inline: auto; }
+  /* Логотип, меню и кнопка в одну строку не помещаются: первая строка — логотип
+     и кнопка, вторая — меню */
+  .site-header__inner { flex-wrap: wrap; row-gap: var(--space-1); column-gap: var(--space-2); justify-content: space-between; }
+  .site-header__nav { order: 1; flex-basis: 100%; flex-wrap: wrap; column-gap: var(--space-3); margin-inline-start: 0; }
+  /* Шапка в две строки выше отступа секции — переход по меню не прячет заголовок под ней */
+  html { scroll-padding-top: var(--space-4); }
 }
 
 @media (max-width: 767px) {
@@ -1235,9 +1522,34 @@ a { color: var(--color-accent); text-underline-offset: 0.2em; }
   .section { padding-block: var(--space-8); }
   .section--hero { padding-block: var(--space-4) var(--space-6); }
   .hero__inner { padding: var(--space-6) var(--space-3); }
-  .hero__eyebrow { padding: var(--space-1) var(--space-2); gap: var(--space-1); }
-  .site-header__inner { flex-wrap: wrap; row-gap: var(--space-1); }
-  .site-header__nav { order: 1; flex-basis: 100%; margin-inline-end: 0; }
+  /* На телефоне шапка не липкая: в три строки она закрывала бы четверть экрана */
+  .site-header { position: relative; }
+  .site-header__logo img { height: 30px; }
+  .site-header__nav { column-gap: var(--space-2); }
+  .site-header .button { padding-inline: var(--space-2); }
+  /* Цель нажатия 44 px: строки меню и ссылки подвала стоят плотно */
+  .site-header__nav a,
+  .site-footer__links a { display: inline-flex; align-items: center; min-height: var(--tap-min); }
+}
+
+/* Телефон: шапка не липкая, поэтому кнопка связи живёт внизу экрана — появляется после
+   первого экрана и прячется у «Контакта» (main.js). Без JS видна всегда. Ревью 21.10.2026. */
+.mobile-cta { display: none; }
+@media (max-width: 767px) {
+  .mobile-cta {
+    display: flex;
+    position: fixed;
+    inset-inline: var(--space-2);
+    bottom: calc(var(--space-2) + env(safe-area-inset-bottom));
+    z-index: 20;
+    justify-content: center;
+    box-shadow: 0 8px 24px color-mix(in srgb, var(--color-bg) 80%, transparent);
+  }
+  .mobile-cta[hidden] { display: none; }
+  /* Под кнопкой — запас, чтобы она не закрывала подвал */
+  body { padding-bottom: calc(var(--tap-min) + var(--space-4)); }
+  /* Источник цифры переносится, а не уходит за край экрана */
+  .source { white-space: normal; }
 }
 
 @media (max-width: 479px) {

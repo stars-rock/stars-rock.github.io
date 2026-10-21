@@ -33,22 +33,7 @@ document.documentElement.classList.add('js');
   targets.forEach((el) => observer.observe(el));
 })();
 
-// Сквозная навигация — только после первого скролла.
-(() => {
-  'use strict';
-
-  const header = document.querySelector('[data-header]');
-  if (!header) return;
-
-  const reveal = () => {
-    header.hidden = false;
-    window.removeEventListener('scroll', reveal);
-  };
-
-  window.addEventListener('scroll', reveal, { passive: true });
-})();
-
-// «Вопросы и границы» — вкладки по WAI-ARIA: клик, ↑↓, Home/End.
+// «Что спрашивают перед началом» — вкладки по WAI-ARIA: клик, ↑↓, Home/End.
 (() => {
   'use strict';
 
@@ -78,6 +63,24 @@ document.documentElement.classList.add('js');
       tabs[next].focus();
     });
   });
+})();
+
+// Кнопка связи внизу экрана на телефоне: прячется на первом экране и у «Контакта»,
+// где своя кнопка уже на виду.
+(() => {
+  'use strict';
+
+  const cta = document.querySelector('.mobile-cta');
+  const zones = ['hero', 'contact'].map((id) => document.getElementById(id)).filter(Boolean);
+  if (!cta || !zones.length || !('IntersectionObserver' in window)) return;
+
+  const visible = new Set();
+  cta.hidden = true;
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e) => (e.isIntersecting ? visible.add(e.target) : visible.delete(e.target)));
+    cta.hidden = visible.size > 0;
+  });
+  zones.forEach((z) => observer.observe(z));
 })();
 
 // Копирование адреса в «Контакте». Без Clipboard API кнопка не нужна — убираем.

@@ -13,6 +13,9 @@
   /* Акцент — янтарь, выбран 23.09.2026 по эскизам */
   --color-accent: #FFB020;         /* 10.3:1 */
   --color-accent-ink: #0E1217;     /* текст поверх акцента */
+  /* Знак студии — латунь, спокойнее акцента: знак отдельно, действие отдельно (20.10.2026).
+     Файлы знака красят design/mark.py и design/logo.py — менять цвет и там. */
+  --color-mark: #B08D57;           /* 6.1:1 */
   /* Отклонены на том же выборе: */
   /* --color-accent: #B8FF3C; */   /* лайм, 15.6:1 */
   /* --color-accent: #E2725B; */   /* терракота, 6.1:1 */
@@ -22,8 +25,9 @@
   --font-text: "Onest", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
-  /* Шкала с шагом 1.25 */
-  --size-caption: 0.8125rem;  /* 13px */
+  /* Шкала с шагом 1.25. Подпись — 15px, а не 13: читатель 35–55 лет, тёмный фон
+     (ревью 21.10.2026) */
+  --size-caption: 0.9375rem;  /* 15px */
   --size-body: 1rem;          /* 16px */
   --size-lead: 1.25rem;       /* 20px */
   --size-h4: 1.5625rem;       /* 25px */
@@ -38,7 +42,7 @@
   --leading-tight: 1.08;
   --leading-body: 1.6;
   --tracking-tight: -0.02em;
-  --measure: 70ch;
+  --measure: 62ch;  /* ~75–80 знаков кириллицы; при 70ch выходило ~88 (ревью 21.10.2026) */
 
   /* Отступы, шаг 8 */
   --space-1: 0.5rem;
