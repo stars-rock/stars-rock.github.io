@@ -391,7 +391,7 @@
           <span class="study__num" aria-hidden="true">01</span>
           <h3 class="study__title">Разбор процессов</h3>
           <p class="study__what">Смотрю, как сейчас идут документы и данные: кто что делает руками, где ошибаются и где ждут. Говорю с сотрудниками, которые делают эту работу.</p>
-          <p class="study__out"><span>Вы получаете</span>Схему процесса и список мест, где теряется время. <a href="#case-agro">Кейс: обследование теплиц</a></p>
+          <p class="study__out"><span>Вы получаете</span>Схему процесса и список мест, где теряется время. <a href="#process-map">Пример разбора</a>, <a href="#case-agro">кейс: обследование теплиц</a></p>
         </li>
         <li class="study__step">
           <span class="study__num" aria-hidden="true">02</span>
@@ -412,6 +412,30 @@
           <p class="study__out"><span>Вы получаете</span>Обоснование с выводом. <a href="#case-ai-tools">Кейс: ИИ-инструменты для команды</a></p>
         </li>
       </ol>
+      <figure class="wait-map reveal" id="process-map">
+        <figcaption><span class="chip">Условный пример</span>Путь одной заявки: от письма клиента до подписанного счёта</figcaption>
+        <div class="wait-map__totals">
+          <p><span class="wait-map__num wait-map__num--work">15&nbsp;минут</span>заявку обрабатывают руками</p>
+          <p><span class="wait-map__num">1&nbsp;день 19&nbsp;часов</span>она просто лежит и ждёт</p>
+        </div>
+        <div class="wait-map__bar" aria-hidden="true">
+          <span class="wait-map__wait" style="flex-grow: 180"></span>
+          <span class="wait-map__work"></span>
+          <span class="wait-map__wait" style="flex-grow: 240"></span>
+          <span class="wait-map__work"></span>
+          <span class="wait-map__wait" style="flex-grow: 2160"></span>
+          <span class="wait-map__work"></span>
+        </div>
+        <ol class="wait-map__steps" role="list">
+          <li class="is-wait">Лежит в почте <span>3&nbsp;часа</span></li>
+          <li class="is-work">Менеджер перепечатывает в таблицу <span>8&nbsp;минут</span></li>
+          <li class="is-wait">Ждёт бухгалтера <span>4&nbsp;часа</span></li>
+          <li class="is-work">Бухгалтер готовит счёт <span>5&nbsp;минут</span></li>
+          <li class="is-wait">Счёт ждёт подписи <span>1,5&nbsp;дня</span></li>
+          <li class="is-work">Руководитель подписывает <span>2&nbsp;минуты</span></li>
+        </ol>
+        <p class="wait-map__sum"><strong>Вывод разбора:</strong> 99&nbsp;% времени заявка лежит без движения. Ускорять сотрудников не нужно, нужно убрать ожидание: заявка сама попадает в таблицу, а счёт уходит на подпись в тот же час.</p>
+      </figure>
       <h3 class="analytics__where">Где делал</h3>
       <ul class="cases cases--pair" role="list">
         <li class="case-card reveal" id="case-agro">
@@ -767,9 +791,9 @@
         </div>
       </div>
     </section>
-  </main>
 
-  <a class="mobile-cta button button--accent" href="#contact">Обсудить задачу</a>
+    <a class="mobile-cta button button--accent" href="#contact">Обсудить задачу</a>
+  </main>
 
   <footer class="site-footer">
     <div class="site-footer__inner">

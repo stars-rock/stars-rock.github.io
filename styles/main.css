@@ -504,6 +504,82 @@ a { color: var(--color-accent); text-underline-offset: 0.2em; }
   .study { grid-template-columns: 1fr; padding: var(--space-3); }
 }
 .analytics__team { margin: var(--space-4) 0 0; }
+
+/* Условный пример разбора: путь одной заявки, работа против ожидания (приём карты
+   потока ценности). Полоса в масштабе времени; работа — акцентом, ожидание — штриховкой.
+   Шаги работы — минуты на фоне суток, поэтому у них минимальная ширина, а не доля.
+   Ревью 21.10.2026: вместо кейса обследования, отчёты по которому закрыты. */
+.wait-map {
+  --wait-hatch: repeating-linear-gradient(135deg, var(--color-surface) 0 6px, color-mix(in srgb, var(--color-border) 55%, transparent) 6px 8px);
+  margin: var(--space-4) 0 0;
+  padding: var(--space-3) var(--space-4) var(--space-4);
+  background: color-mix(in srgb, var(--color-bg) 70%, transparent);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  scroll-margin-top: calc(var(--space-12) + var(--space-3));
+}
+.wait-map figcaption {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--size-caption);
+  color: var(--color-text-muted);
+}
+.wait-map__totals { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-8); margin: var(--space-3) 0 var(--space-2); }
+.wait-map__totals p { margin: 0; color: var(--color-text-muted); font-size: var(--size-caption); }
+.wait-map__num {
+  display: block;
+  font-family: var(--font-display);
+  font-size: var(--size-h3);
+  line-height: 1.15;
+  color: var(--color-text);
+}
+.wait-map__num--work { color: var(--color-accent); }
+.wait-map__bar { display: flex; gap: 2px; height: var(--space-4); }
+.wait-map__wait { flex-basis: 0; min-width: 0; background: var(--wait-hatch); border-radius: 2px; }
+.wait-map__work { flex: 0 0 var(--space-1); background: var(--color-accent); border-radius: 2px; }
+.wait-map__steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-1) var(--space-4);
+  margin: var(--space-3) 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--size-caption);
+}
+.wait-map__steps li { position: relative; padding-left: var(--space-3); }
+.wait-map__steps li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.3em;
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+}
+.wait-map__steps .is-wait { color: var(--color-text-muted); }
+.wait-map__steps .is-wait::before { background: var(--wait-hatch); outline: 1px solid var(--color-border); outline-offset: -1px; }
+.wait-map__steps .is-work::before { background: var(--color-accent); }
+.wait-map__steps span { white-space: nowrap; color: var(--color-text); }
+.wait-map__steps .is-work span { color: var(--color-accent); }
+.wait-map__sum {
+  margin: var(--space-3) 0 0;
+  max-width: none;
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--color-border);
+  line-height: 1.55;
+}
+.wait-map__sum strong { color: var(--color-accent); font-weight: 600; }
+@media (max-width: 1023px) {
+  .wait-map__steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 767px) {
+  .wait-map { padding: var(--space-3); }
+  .wait-map__totals { gap: var(--space-2) var(--space-4); }
+  .wait-map__num { font-size: var(--size-h4); }
+  .wait-map__steps { grid-template-columns: 1fr; }
+}
 .analytics__where { margin: var(--space-6) 0 var(--space-3); font-size: var(--size-h4); line-height: 1.2; }
 
 @media (max-width: 1023px) {
