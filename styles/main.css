@@ -433,6 +433,26 @@ a { color: var(--color-accent); text-underline-offset: 0.2em; }
   font-variant-numeric: tabular-nums;
 }
 .offers__note { margin: var(--space-3) 0 0; font-size: var(--size-caption); color: var(--color-text-muted); }
+/* Условия цен — четыре пункта в ряд на всю ширину, как условия в «Большой проект или сжатые сроки»;
+   одним абзацем в 62ch было пять строк (ревью 22.10.2026) */
+.price-facts {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-4);
+  margin: var(--space-4) 0 0;
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--color-border);
+  font-size: var(--size-caption);
+  line-height: 1.55;
+}
+.price-facts dt { color: var(--color-accent); }
+.price-facts dd { margin: 0; color: var(--color-text-muted); }
+@media (max-width: 1023px) {
+  .price-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 767px) {
+  .price-facts { grid-template-columns: 1fr; gap: var(--space-2); }
+}
 
 /* Условный расчёт окупаемости: три колонки «без системы → с системой → экономия» */
 .payback {
@@ -506,40 +526,99 @@ a { color: var(--color-accent); text-underline-offset: 0.2em; }
 @media (max-width: 767px) {
   .study { grid-template-columns: 1fr; padding: var(--space-3); }
 }
-/* Коллеги под задачу и условия разбора — полоса на всю ширину раздела: заголовок слева,
-   роли метками, условия в ряд. Абзац в 270 знаков в 62ch висел под левым кейсом (21.10.2026). */
+/* Большой проект или сжатые сроки — панель со схемой «Ваша задача → Я → коллеги»: заказчик
+   работает с одним человеком, он подключает остальных. Ниже условия в ряд (ревью 22.10.2026:
+   прежняя полоса с метками ролей читалась слабо для важного пункта). */
 .team-band {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
-  gap: var(--space-4);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  gap: var(--space-4) var(--space-6);
+  align-items: center;
   margin: var(--space-6) 0 0;
-  padding-top: var(--space-3);
-  border-top: 1px solid var(--color-border);
-}
-.team-band__title { margin: 0; font-size: var(--size-h4); line-height: 1.2; }
-.team-band__lead { margin: 0 0 var(--space-2); max-width: none; }
-.team-band__roles { display: flex; flex-wrap: wrap; gap: var(--space-1); margin: 0 0 var(--space-3); padding: 0; list-style: none; }
-.team-band__roles li {
-  padding: 4px var(--space-2);
+  padding: var(--space-4);
+  background: var(--color-surface);
   border: 1px solid var(--color-border);
-  border-radius: 999px;
+  border-radius: var(--radius-lg);
+}
+.team-band__title { margin: 0 0 var(--space-1); font-size: var(--size-h4); line-height: 1.2; }
+.team-band__lead { margin: 0; color: var(--color-text-muted); }
+.team-flow {
+  --flow-gap: var(--space-6);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.3fr);
+  column-gap: var(--flow-gap);
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.team-flow__node {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-2) var(--space-3);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+}
+.team-flow__node strong { font-weight: 600; }
+.team-flow__node span { font-size: var(--size-caption); color: var(--color-text-muted); }
+.team-flow__node--me { border-color: var(--color-accent); }
+/* Стрелка к следующему шагу: линия и наконечник в промежутке между блоками */
+.team-flow__node::after,
+.team-flow__node::before { content: ""; position: absolute; }
+.team-flow__node::after {
+  left: 100%;
+  top: 50%;
+  width: calc(var(--flow-gap) - 2px);
+  height: 1px;
+  background: var(--color-border);
+}
+.team-flow__node::before {
+  left: calc(100% + var(--flow-gap) - 9px);
+  top: calc(50% - 4px);
+  width: 8px;
+  height: 8px;
+  border-top: 1px solid var(--color-border);
+  border-right: 1px solid var(--color-border);
+  transform: rotate(45deg);
+}
+.team-flow__roles { padding-left: var(--space-2); border-left: 1px solid var(--color-border); }
+.team-flow__roles ul { display: grid; gap: var(--space-1); margin: 0; padding: 0; list-style: none; }
+.team-flow__roles li {
+  padding: 6px var(--space-2);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
   font-size: var(--size-caption);
 }
 .team-band__terms {
+  grid-column: 1 / -1;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: var(--space-4);
   margin: 0;
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--color-border);
   font-size: var(--size-caption);
   line-height: 1.55;
 }
 .team-band__terms dt { color: var(--color-accent); }
 .team-band__terms dd { margin: 0; }
 .team-band__terms div:last-child dd { color: var(--color-text-muted); }
+/* Уже 1024 — схема сверху вниз, стрелки вертикальные */
 @media (max-width: 1023px) {
-  .team-band { grid-template-columns: 1fr; gap: var(--space-2); }
+  .team-band { grid-template-columns: 1fr; }
+  .team-flow { --flow-gap: var(--space-4); grid-template-columns: 1fr; row-gap: var(--flow-gap); }
+  .team-flow__node::after { left: var(--space-4); top: 100%; width: 1px; height: calc(var(--flow-gap) - 2px); }
+  .team-flow__node::before { left: calc(var(--space-4) - 4px); top: calc(100% + var(--flow-gap) - 9px); transform: rotate(135deg); }
+  .team-flow__roles { padding-left: 0; border-left: 0; }
+  .team-flow__roles ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 767px) {
+  .team-band { padding: var(--space-3); }
+  /* «Программирование» не помещалось в половину ширины — роли по ширине слова, с переносом */
+  .team-flow__roles ul { display: flex; flex-wrap: wrap; }
   .team-band__terms { grid-template-columns: 1fr; gap: var(--space-2); }
 }
 
